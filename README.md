@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🦊 Kompile
+# Kompile
 
 **Your all-in-one competitive programming & development dashboard.**
 
@@ -14,7 +14,7 @@
 
 ---
 
-## 📖 What is Kompile?
+## What is Kompile?
 
 Kompile is a **unified platform** for developers and competitive programmers to track, manage, and improve their coding journey — all in one place.
 
@@ -22,19 +22,19 @@ Most developers juggle 4–5 tabs to check their coding stats. Kompile brings ev
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-| Feature                    | Description                                                                                                                                                                                       |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🧑‍💻 **Profile Dashboard**   | Aggregates your stats from LeetCode, Codeforces, HackerRank, and GitHub into a single profile. See total questions solved, active days, submission streaks, and DSA topic breakdowns at a glance. |
-| 📅 **Contest Calendar**    | Never miss a contest. Pulls upcoming contests from Codeforces, AtCoder, CodeChef, GeeksforGeeks, and more into a unified calendar with one-click **"Add to Calendar"** support.                   |
-| 🏢 **Company-Wise Sheets** | Curated DSA problem sheets tailored for top companies like Google, Amazon, Meta, and Microsoft. Filter by difficulty, topic, platform, and popularity to focus your prep.                         |
-| 📊 **Dev Stats**           | Syncs with your GitHub to display language usage, commit history, PRs, stars, and pinned projects — giving recruiters and peers a full picture of your work.                                      |
-| 🪪 **Kompile Card**        | A verified developer card that serves as your stamp of authenticity and unlocks leaderboard rankings across the platform.                                                                         |
+| Feature                | Description                                                                                                                                                                                       |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Profile Dashboard**  | Aggregates your stats from LeetCode, Codeforces, HackerRank, and GitHub into a single profile. See total questions solved, active days, submission streaks, and DSA topic breakdowns at a glance. |
+| **Contest Calendar**   | Never miss a contest. Pulls upcoming contests from Codeforces, AtCoder, CodeChef, GeeksforGeeks, and more into a unified calendar with one-click **"Add to Calendar"** support.                   |
+| **Company-Wise Sheets**| Curated DSA problem sheets tailored for top companies like Google, Amazon, Meta, and Microsoft. Filter by difficulty, topic, platform, and popularity to focus your prep.                         |
+| **Dev Stats**          | Syncs with your GitHub to display language usage, commit history, PRs, stars, and pinned projects — giving recruiters and peers a full picture of your work.                                      |
+| **Kompile Card**       | A verified developer card that serves as your stamp of authenticity and unlocks leaderboard rankings across the platform.                                                                         |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend**
 
@@ -67,6 +67,6 @@ Most developers juggle 4–5 tabs to check their coding stats. Kompile brings ev
 
 <div align="center">
 
-_Built for coders, by coders._ 🚀
+_Built for coders, by coders._
 
 </div>
