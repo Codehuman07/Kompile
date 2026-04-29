@@ -11,8 +11,6 @@ function Navbar(){
             <a href="/logout">Logout</a>
             <a href="/register">Register</a>
             <a href="/register/student">Student</a>
-            <a href="/register/teacher">Teacher</a>
-            <a href="/register/company">Company</a>
         </div>
     );
 }
