@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GridComponent from "../../components/GridComponent";
 
-//  icons
+// icons
 const ArrowLeft = () => (
   <svg
     width="20"
@@ -51,28 +51,6 @@ const EyeOffIcon = () => (
   </svg>
 );
 
-const GoogleIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24">
-    <path
-      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-      fill="#4285F4"
-    />
-    <path
-      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-      fill="#34A853"
-    />
-    <path
-      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
-      fill="#FBBC05"
-    />
-    <path
-      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-      fill="#EA4335"
-    />
-  </svg>
-);
-
-/* feature icons */
 const ProfileIcon = () => (
   <svg
     width="20"
@@ -129,23 +107,8 @@ function Login() {
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    //  wire up auth
-  };
-
-  const inputStyle = {
-    width: "100%",
-    background: "#1c1c1c",
-    border: "1px solid #2e2e2e",
-    borderRadius: "10px",
-    padding: "13px 16px",
-    color: "white",
-    fontSize: "14px",
-    outline: "none",
-    boxSizing: "border-box",
-    transition: "border-color 0.2s",
   };
 
   const features = [
@@ -168,135 +131,58 @@ function Login() {
 
   return (
     <GridComponent>
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          fontFamily: "'Inter', 'Segoe UI', sans-serif",
-        }}
-      >
-        {/* ── TOP NAV ───────────────────────────────────────────────── */}
-        <nav
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "14px 32px",
-            borderBottom: "1px solid rgba(255,255,255,0.07)",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <div className="min-h-screen flex flex-col font-sans">
+        {/* ── TOP NAV ── */}
+        <nav className="flex items-center justify-between px-6 md:px-8 py-4 border-b border-white/[0.07]">
+          <div className="flex items-center gap-2.5">
             <button
-              onClick={() => navigate(-1)}
-              style={{
-                background: "none",
-                border: "none",
-                color: "white",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                padding: "4px",
-              }}
+              onClick={() => navigate("/")}
+              className="text-white flex items-center p-1 cursor-pointer bg-transparent border-none"
             >
               <ArrowLeft />
             </button>
-            <span
-              style={{
-                color: "white",
-                fontWeight: "800",
-                fontSize: "20px",
-                letterSpacing: "-0.5px",
-              }}
-            >
-              Kom<span style={{ color: "#f97316" }}>pile</span>
+            <span className="text-white font-extrabold text-xl tracking-tight">
+              Kom<span className="text-orange-500">pile</span>
             </span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+          <div className="flex items-center gap-5">
             <Link
               to="/login"
-              style={{
-                color: "#f97316",
-                textDecoration: "none",
-                fontWeight: "500",
-                fontSize: "15px",
-              }}
+              className="text-orange-500 font-medium text-sm md:text-[15px] no-underline"
             >
               Sign In
             </Link>
             <Link
               to="/register"
-              style={{
-                background: "#f97316",
-                color: "white",
-                padding: "9px 22px",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontWeight: "600",
-                fontSize: "15px",
-              }}
+              className="bg-orange-500 text-white px-4 md:px-5 py-2 rounded-lg font-semibold text-sm md:text-[15px] no-underline hover:bg-orange-600 transition-colors"
             >
               Sign Up
             </Link>
           </div>
         </nav>
 
-        {/* body */}
-        <div style={{ flex: 1, display: "flex" }}>
+        {/* ── BODY ── */}
+        <div className="flex flex-1">
           {/* LEFT PANEL */}
-          <div
-            style={{
-              flex: "0 0 48%",
-              padding: "60px 72px 40px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
+          <div className="flex flex-col justify-center w-full md:w-[48%] px-6 sm:px-10 md:px-16 lg:px-20 py-10">
             <div>
-              <h1
-                style={{
-                  color: "white",
-                  fontSize: "44px",
-                  fontWeight: "800",
-                  margin: "0 0 10px",
-                  letterSpacing: "-1px",
-                }}
-              >
+              <h1 className="text-white text-4xl md:text-[44px] font-extrabold mb-2.5 tracking-tight">
                 Sign in
               </h1>
-              <p
-                style={{
-                  color: "#9ca3af",
-                  fontSize: "14px",
-                  margin: "0 0 36px",
-                }}
-              >
+              <p className="text-gray-400 text-sm mb-9">
                 Don't have an account yet?{" "}
                 <Link
                   to="/register"
-                  style={{
-                    color: "#3b82f6",
-                    textDecoration: "none",
-                    fontWeight: "500",
-                  }}
+                  className="text-blue-500 font-medium no-underline hover:text-blue-400 transition-colors"
                 >
                   Sign up here
                 </Link>
               </p>
 
-              {/* Form */}
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 {/* Email */}
-                <div style={{ marginBottom: "20px" }}>
-                  <label
-                    style={{
-                      color: "#d1d5db",
-                      fontSize: "14px",
-                      display: "block",
-                      marginBottom: "8px",
-                    }}
-                  >
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="text-gray-300 text-sm">
                     Email address
                   </label>
                   <input
@@ -307,36 +193,24 @@ function Login() {
                     placeholder="Enter email address"
                     value={form.email}
                     onChange={handleChange}
-                    style={inputStyle}
-                    onFocus={(e) => (e.target.style.borderColor = "#f97316")}
-                    onBlur={(e) => (e.target.style.borderColor = "#2e2e2e")}
+                    className="w-full bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 outline-none focus:border-orange-500 transition-colors"
                   />
                 </div>
 
                 {/* Password */}
-                <div style={{ marginBottom: "28px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      marginBottom: "8px",
-                    }}
-                  >
-                    <label style={{ color: "#d1d5db", fontSize: "14px" }}>
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="password" className="text-gray-300 text-sm">
                       Password
                     </label>
                     <Link
                       to="/forgot-password"
-                      style={{
-                        color: "#f97316",
-                        fontSize: "14px",
-                        textDecoration: "none",
-                      }}
+                      className="text-orange-500 text-sm no-underline hover:text-orange-400 transition-colors"
                     >
                       Forgot password?
                     </Link>
                   </div>
-                  <div style={{ position: "relative" }}>
+                  <div className="relative">
                     <input
                       id="password"
                       name="password"
@@ -345,227 +219,91 @@ function Login() {
                       placeholder="Enter password"
                       value={form.password}
                       onChange={handleChange}
-                      style={{ ...inputStyle, paddingRight: "48px" }}
-                      onFocus={(e) => (e.target.style.borderColor = "#f97316")}
-                      onBlur={(e) => (e.target.style.borderColor = "#2e2e2e")}
+                      className="w-full bg-[#1c1c1c] border border-[#2e2e2e] rounded-xl px-4 py-3 pr-12 text-white text-sm placeholder-gray-600 outline-none focus:border-orange-500 transition-colors"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword((v) => !v)}
-                      style={{
-                        position: "absolute",
-                        right: "14px",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                        background: "none",
-                        border: "none",
-                        color: "#9ca3af",
-                        cursor: "pointer",
-                        display: "flex",
-                        alignItems: "center",
-                      }}
+                      className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors bg-transparent border-none flex items-center cursor-pointer"
                     >
                       {showPassword ? <EyeOffIcon /> : <EyeIcon />}
                     </button>
                   </div>
                 </div>
 
-                {/* subnmit */}
+                {/* Submit */}
                 <button
                   id="login-submit"
                   type="submit"
-                  style={{
-                    width: "100%",
-                    background: "#f97316",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "10px",
-                    padding: "15px",
-                    fontSize: "16px",
-                    fontWeight: "600",
-                    cursor: "pointer",
-                    marginBottom: "32px",
-                    transition: "background 0.2s, transform 0.15s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#ea580c";
-                    e.currentTarget.style.transform = "translateY(-1px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#f97316";
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
+                  className="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.98] text-white font-semibold text-base rounded-xl py-3.5 mt-1 cursor-pointer border-none transition-all duration-200 shadow-lg shadow-orange-500/20"
                 >
                   Sign in
                 </button>
               </form>
-
             </div>
 
             {/* Footer */}
-            <div style={{ marginTop: "48px", textAlign: "center" }}>
-              <p
-                style={{
-                  color: "#6b7280",
-                  fontSize: "12px",
-                  lineHeight: "1.7",
-                  margin: "0 0 6px",
-                }}
-              >
+            <div className="mt-12 text-center">
+              <p className="text-gray-500 text-xs leading-relaxed mb-1.5">
                 By signing in or creating an account, you are agreeing to our{" "}
-                <Link
-                  to="/terms"
-                  style={{ color: "#3b82f6", textDecoration: "none" }}
-                >
+                <Link to="/terms" className="text-blue-500 no-underline">
                   Terms &amp; Conditions
                 </Link>{" "}
                 and our{" "}
-                <Link
-                  to="/privacy"
-                  style={{ color: "#3b82f6", textDecoration: "none" }}
-                >
+                <Link to="/privacy" className="text-blue-500 no-underline">
                   Privacy Policy
                 </Link>
                 .
               </p>
-              <p style={{ color: "#6b7280", fontSize: "12px", margin: 0 }}>
+              <p className="text-gray-500 text-xs">
                 © 2024 Kompile.&nbsp;&nbsp;&nbsp;
-                <span
-                  style={{ cursor: "pointer", textDecoration: "underline" }}
-                >
+                <span className="underline cursor-pointer">
                   Contact Support
                 </span>
               </p>
             </div>
           </div>
 
-          {/* RIGHT PANEL */}
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "48px 60px",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            {/* warm gloww */}
+          {/* RIGHT PANEL — hidden on mobile */}
+          <div className="hidden md:flex flex-1 flex-col items-center justify-center px-10 lg:px-16 py-12 relative overflow-hidden">
+            {/* warm radial glow */}
             <div
+              className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full pointer-events-none"
               style={{
-                position: "absolute",
-                top: "15%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "420px",
-                height: "420px",
                 background:
                   "radial-gradient(circle, rgba(160,80,10,0.45) 0%, transparent 68%)",
-                pointerEvents: "none",
-                zIndex: 0,
               }}
             />
 
             <img
               src="/Assets/logos/hi_logo.png"
               alt="Kompile mascot"
-              style={{
-                width: "210px",
-                height: "auto",
-                position: "relative",
-                zIndex: 1,
-                marginBottom: "20px",
-              }}
+              className="w-52 h-auto relative z-10 mb-5"
             />
 
-            <h2
-              style={{
-                color: "white",
-                fontSize: "26px",
-                fontWeight: "700",
-                textAlign: "center",
-                margin: "0 0 10px",
-                position: "relative",
-                zIndex: 1,
-              }}
-            >
+            <h2 className="text-white text-2xl font-bold text-center mb-2.5 relative z-10">
               Welcome to Kompile
             </h2>
-            <p
-              style={{
-                color: "#9ca3af",
-                textAlign: "center",
-                fontSize: "14px",
-                lineHeight: "1.65",
-                maxWidth: "340px",
-                margin: "0 0 36px",
-                position: "relative",
-                zIndex: 1,
-              }}
-            >
+            <p className="text-gray-400 text-sm text-center leading-relaxed max-w-[340px] mb-9 relative z-10">
               Your high-performance utility for technical excellence and
               precision retrieval.
             </p>
 
             {/* Feature cards */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "14px",
-                width: "100%",
-                maxWidth: "400px",
-                position: "relative",
-                zIndex: 1,
-              }}
-            >
+            <div className="flex flex-col gap-3.5 w-full max-w-[400px] relative z-10">
               {features.map((f, i) => (
                 <div
                   key={i}
-                  style={{
-                    background: "#1a1a1a",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                    borderRadius: "12px",
-                    padding: "14px 18px",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "16px",
-                  }}
+                  className="bg-[#1a1a1a] border border-white/[0.07] rounded-xl p-4 flex items-start gap-4"
                 >
-                  <div
-                    style={{
-                      background: "rgba(249,115,22,0.12)",
-                      borderRadius: "8px",
-                      width: "40px",
-                      height: "40px",
-                      flexShrink: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
+                  <div className="bg-orange-500/10 rounded-lg w-10 h-10 shrink-0 flex items-center justify-center">
                     {f.icon}
                   </div>
                   <div>
-                    <div
-                      style={{
-                        color: "white",
-                        fontWeight: "600",
-                        fontSize: "14px",
-                        marginBottom: "4px",
-                      }}
-                    >
+                    <div className="text-white font-semibold text-sm mb-1">
                       {f.title}
                     </div>
-                    <div
-                      style={{
-                        color: "#9ca3af",
-                        fontSize: "12px",
-                        lineHeight: "1.55",
-                      }}
-                    >
+                    <div className="text-gray-400 text-xs leading-snug">
                       {f.desc}
                     </div>
                   </div>
