@@ -6,7 +6,7 @@ export function Hero() {
       {/* Hero Header */}
       <div className="flex flex-col items-center space-y-6 max-w-4xl mx-auto">
         <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-sm font-semibold shadow-sm">
-          100K+ Engineers Trust Codolio
+          100K+ Engineers Trust Kompile
         </div>
         
         <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight text-white">
