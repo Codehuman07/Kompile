@@ -1,4 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+const navLinkCls = ({ isActive }) =>
+  isActive
+    ? "text-orange-500 font-semibold drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition"
+    : "text-gray-300 hover:text-white transition";
 
 function Navbar() {
   return (
@@ -14,20 +19,20 @@ function Navbar() {
         </h2>
       </Link>
 
-      <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-        <Link to="/" className="hover:text-white transition">
+      <div className="hidden md:flex items-center gap-8 text-sm">
+        <NavLink to="/" end className={navLinkCls}>
           Question Tracker
-        </Link>
-        <Link to="/company" className="hover:text-white transition">
+        </NavLink>
+        <NavLink to="/company" className={navLinkCls}>
           Company Wise Kit
-        </Link>
-        <Link to="/events" className="hover:text-white transition">
+        </NavLink>
+        <NavLink to="/events" className={navLinkCls}>
           Event Tracker
-        </Link>
-        <Link to="/profile" className="hover:text-white transition">
+        </NavLink>
+        <NavLink to="/profile" className={navLinkCls}>
           Profile Tracker
-        </Link>
-        <button className="bg-[#ffffff]  rounded-full hover:bg-[#2a2a2a] transition">
+        </NavLink>
+        <button className="bg-[#ffffff] rounded-full hover:bg-[#2a2a2a] transition">
           <img
             src="././Assets/Dark mode toggle.svg"
             alt="dark mode toggle button"
