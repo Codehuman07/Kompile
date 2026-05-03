@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import GridComponent from "../../components/GridComponent";
+import Footer from "../../components/Footer"
 export default function LandingPage() {
   return (
     <>
@@ -11,6 +12,8 @@ export default function LandingPage() {
           </h1>
         </div>
       </GridComponent>
+      <Footer/>
+
     </>
   );
 }
