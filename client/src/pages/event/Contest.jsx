@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Calendar from "../../components/Calendar";
 import ContestCard from "../../components/ContestCard";
+import Footer from "../../components/Footer"
 
 export default function Contest() {
   const [contests, setContests] = useState([]);
@@ -157,6 +158,7 @@ export default function Contest() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
