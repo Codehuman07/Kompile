@@ -2,7 +2,15 @@ import React, { useEffect, useState } from "react";
 import fetchUserTopicStats from "../../api/leetcodeApi.js";
 import DonutChart from "../../components/DonutChart.jsx";
 import HeatmapComponent from "../../components/HeatmapComponent.jsx";
-import { BarChart, Bar, XAxis, YAxis, LabelList, ResponsiveContainer, Tooltip } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  LabelList,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
 
 function LeetcodeData() {
   const [data, setData] = useState(null);
@@ -18,7 +26,7 @@ function LeetcodeData() {
       if (result?.userCalendar?.submissionCalendar) {
         const calendarData = JSON.parse(result.userCalendar.submissionCalendar);
         const formattedHeatMap = [];
-        
+
         Object.entries(calendarData).forEach(([timestamp, count]) => {
           const date = new Date(Number(timestamp) * 1000);
           const formattedDate = date.toISOString().split("T")[0];
@@ -58,8 +66,12 @@ function LeetcodeData() {
             <div className="flex-1 w-full flex items-center justify-center">
               {heatMap.length > 0 && (
                 <HeatmapComponent
-                  startDate={new Date(new Date().getFullYear(), 0, 1)}
-                  endDate={new Date(new Date().getFullYear(), 11, 31)}
+                  startDate={
+                    new Date(
+                      new Date().setFullYear(new Date().getFullYear() - 1),
+                    )
+                  }
+                  endDate={new Date()}
                   values={heatMap}
                 />
               )}
@@ -135,50 +147,64 @@ function LeetcodeData() {
           </div>
         </div>
 
-        {/* DSA Topic Analysis — full width bar chart */}
-        {data?.tagProblemCounts && (() => {
-          const topicData = [
-            ...data.tagProblemCounts.fundamental,
-            ...data.tagProblemCounts.intermediate,
-            ...data.tagProblemCounts.advanced,
-          ]
-            .filter((t) => t.problemsSolved > 0)
-            .sort((a, b) => b.problemsSolved - a.problemsSolved)
-            .map((t) => ({ topic: t.tagName, count: t.problemsSolved }));
+        {data?.tagProblemCounts &&
+          (() => {
+            const topicData = [
+              ...data.tagProblemCounts.fundamental,
+              ...data.tagProblemCounts.intermediate,
+              ...data.tagProblemCounts.advanced,
+            ]
+              .filter((t) => t.problemsSolved > 0)
+              .sort((a, b) => b.problemsSolved - a.problemsSolved)
+              .map((t) => ({ topic: t.tagName, count: t.problemsSolved }));
 
-          return (
-            <div className="w-full mt-5 bg-black rounded-xl border border-[#2e2e2e] p-5 text-white">
-              <h2 className="text-sm font-semibold text-zinc-400 uppercase tracking-wide mb-5">
-                DSA Topic Analysis
-              </h2>
-              <ResponsiveContainer width="100%" height={topicData.length * 36}>
-                <BarChart
-                  layout="vertical"
-                  data={topicData}
-                  margin={{ top: 0, right: 40, left: 10, bottom: 0 }}
+            return (
+              <div className="w-full mt-5 bg-black rounded-xl border border-[#2e2e2e] p-5 text-white">
+                <h2 className="text-sm font-semibold text-zinc-400 uppercase tracking-wide mb-5">
+                  DSA Topic Analysis
+                </h2>
+                <ResponsiveContainer
+                  width="100%"
+                  height={topicData.length * 36}
                 >
-                  <XAxis type="number" hide />
-                  <YAxis
-                    type="category"
-                    dataKey="topic"
-                    width={140}
-                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
-                    axisLine={false}
-                    tickLine={false}
-                  />
-                  <Tooltip
-                    cursor={{ fill: "rgba(255,255,255,0.04)" }}
-                    contentStyle={{ background: "#1a1a1a", border: "1px solid #2e2e2e", borderRadius: 8, color: "#fff" }}
-                    formatter={(value) => [value, "Solved"]}
-                  />
-                  <Bar dataKey="count" fill="#3b6fd4" radius={[0, 4, 4, 0]}>
-                    <LabelList dataKey="count" position="inside" fill="white" fontSize={11} fontWeight="bold" />
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          );
-        })()}
+                  <BarChart
+                    layout="vertical"
+                    data={topicData}
+                    margin={{ top: 0, right: 40, left: 10, bottom: 0 }}
+                  >
+                    <XAxis type="number" hide />
+                    <YAxis
+                      type="category"
+                      dataKey="topic"
+                      width={140}
+                      tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                      axisLine={false}
+                      tickLine={false}
+                    />
+                    <Tooltip
+                      cursor={{ fill: "rgba(255,255,255,0.04)" }}
+                      contentStyle={{
+                        background: "#1a1a1a",
+                        border: "1px solid #2e2e2e",
+                        borderRadius: 8,
+                        color: "#fff",
+                      }}
+                      formatter={(value) => [value, "Solved"]}
+                    />
+                    <Bar dataKey="count" fill="#3b6fd4" radius={[0, 4, 4, 0]}>
+                      <LabelList
+                        dataKey="count"
+                        position="inside"
+                        fill="white"
+                        fontSize={11}
+                        fontWeight="bold"
+                      />
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            );
+          })()}
       </div>
     </>
   );
