@@ -5,8 +5,13 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import CompanyWiseKit from "./pages/CompanyWiseKit/CompanyWiseKit.jsx";
+<<<<<<< HEAD
 import Contest from "./pages/event/Contest.jsx";
 import UserData from "./components/UserData.jsx";
+=======
+import Contest from './pages/event/Contest.jsx'
+
+>>>>>>> 285fb0164a3be698bad9f845f11ca4570c9741e7
 function App() {
   return (
     <Routes>
