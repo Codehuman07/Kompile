@@ -32,13 +32,13 @@ function Navbar() {
         <NavLink to="/profile" className={navLinkCls}>
           Profile Tracker
         </NavLink>
-        <button className="bg-[#ffffff] rounded-full hover:bg-[#2a2a2a] transition">
+        {/* <button className="bg-[#ffffff] rounded-full hover:bg-[#2a2a2a] transition">
           <img
             src="././Assets/Dark mode toggle.svg"
             alt="dark mode toggle button"
             className="h-10"
           />
-        </button>
+        </button> */}
         <Link
           to="/login"
           className="px-5 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-orange-500/30"

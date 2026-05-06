@@ -5,7 +5,8 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import CompanyWiseKit from "./pages/CompanyWiseKit/CompanyWiseKit.jsx";
-
+import Contest from "./pages/event/Contest.jsx";
+import UserData from "./components/UserData.jsx";
 function App() {
   return (
     <Routes>
@@ -14,8 +15,9 @@ function App() {
       <Route path="/company" element={<CompanyWiseKit />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/profile" element={<Profile />} />
       <Route path="/events" element={<Contest />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/user_data" element={<UserData />} />
     </Routes>
   );
 }
