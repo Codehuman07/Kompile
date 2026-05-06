@@ -1,26 +1,31 @@
 import GridComponent from "./GridComponent.jsx";
 import Navbar from "./Navbar.jsx";
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import DataInputCard from "./DataInputCard.jsx";
-import { ArrowBigLeft } from "lucide-react";
+import { UserContext } from "../context/UserContext.jsx";
+import { ArrowBigLeft, User, LayoutGrid } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import BasicInfoForm from "./BasicInfoForm.jsx";
 import leetcodeLogo from "../../Assets/platformLogos/leetcode-logo.png";
 import gfgLogo from "../../Assets/platformLogos/GeeksForGeeks.png";
 import codeforcesLogo from "../../Assets/platformLogos/codeforces-logo.png";
 import hackerrankLogo from "../../Assets/platformLogos/hackerrank-logo.png";
 import githubLogo from "../../Assets/platformLogos/github-logo.png";
 
+const getPlatformKey = (platformName) => {
+  const map = {
+    leetcode: "leetcode",
+    geeksforgeeks: "gfg",
+    codeforces: "codeforces",
+    hackerrank: "hackerrank",
+    github: "github",
+  };
+  return map[platformName.toLowerCase()] || platformName.toLowerCase();
+};
+
 function UserData() {
-  const [PlatformUserName, setPlatformUserName] = useState({
-    leetcode_username: "",
-    codestudio_username: "",
-    geeksforgeeks_username: "",
-    interviewbit_username: "",
-    codechef_username: "",
-    codeforces_username: "",
-    hackerrank_username: "",
-    atcoder_username: "",
-  });
+  const { user, setUser } = useContext(UserContext);
+  const [activeTab, setActiveTab] = useState("basicInfo");
 
   const platforms = [
     {
@@ -35,7 +40,6 @@ function UserData() {
       link: "https://www.geeksforgeeks.org/user/",
       placeholder: "johndoe",
     },
-
     // {
     //   name: "CodeChef",
     //   logo: "codechef-logo.png",
@@ -68,16 +72,28 @@ function UserData() {
     },
   ];
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setPlatformUserName((prev) => ({
+  const handleInputChange = (e, platform) => {
+    const { value } = e.target;
+    const platformKey = getPlatformKey(platform.name);
+    setUser((prev) => ({
       ...prev,
-      [name]: value,
+      platform_data: {
+        ...prev.platform_data,
+        [platformKey]: {
+          ...prev.platform_data?.[platformKey],
+          username: value,
+        },
+      },
     }));
   };
 
   const handleSubmit = (platform) => {
-    console.log(`Submitted for ${platform.name}`);
+    const platformKey = getPlatformKey(platform.name);
+    const savedUsername = user?.platform_data?.[platformKey]?.username || "";
+    console.log(
+      `[UserContext] ${platform.name} username saved:`,
+      savedUsername,
+    );
   };
 
   const devPlatforms = platforms.filter((p) => p.name === "GitHub");
@@ -87,71 +103,95 @@ function UserData() {
     <>
       <Navbar />
       <GridComponent>
-        <div className="w-full min-h-[calc(100vh-80px)] pt-25 pb-10 px-4 md:px-8 max-w-300 mx-auto text-white">
-          <NavLink to="/profile" className="w-fit block mb-4">
-            <ArrowBigLeft className="h-12 w-12 text-orange-500 hover:bg-orange-500/20 hover:rounded-full hover:p-1 transition absolute top-32 left-32" />
-          </NavLink>
-          <div className="mb-10">
-            <h1 className="text-3xl font-bold mb-2">Platforms</h1>
-            <p className="text-zinc-400">
-              You can update and verify your platform details here.
-            </p>
+        <div className="w-full min-h-[calc(100vh-80px)] pt-24 pb-10 px-4 md:px-8 max-w-[1400px] mx-auto text-white flex gap-10">
+          <div className="w-64 shrink-0 flex flex-col gap-2 mt-20">
+            <NavLink to="/profile" className="mb-6 w-fit">
+              <ArrowBigLeft className="h-10 w-10 text-orange-500 hover:bg-orange-500/20 rounded-full p-1 transition" />
+            </NavLink>
+
+            <button
+              onClick={() => setActiveTab("basicInfo")}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${activeTab === "basicInfo" ? "bg-[#2e2e2e] text-white" : "text-zinc-400 hover:bg-[#1f1f1f] hover:text-zinc-200"}`}
+            >
+              <User size={20} />
+              Basic Info
+            </button>
+            <button
+              onClick={() => setActiveTab("platforms")}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors ${activeTab === "platforms" ? "bg-[#2e2e2e] text-white" : "text-zinc-400 hover:bg-[#1f1f1f] hover:text-zinc-200"}`}
+            >
+              <LayoutGrid size={20} />
+              Platforms
+            </button>
           </div>
 
-          <div className="space-y-10">
-            <section>
-              <h2 className="text-xl font-semibold mb-4 text-zinc-200">
-                Development
-              </h2>
-              <div className="space-y-2">
-                {devPlatforms.map((platform) => (
-                  <DataInputCard
-                    key={platform.name}
-                    logo={platform.logo}
-                    name={platform.name}
-                    link={platform.link}
-                    placeholder={platform.placeholder}
-                    value={
-                      PlatformUserName[
-                        `${platform.name.toLowerCase()}_username`
-                      ] || ""
-                    }
-                    onChange={handleInputChange}
-                    onSubmit={() => handleSubmit(platform)}
-                    showInput={true}
-                    buttonText="Submit"
-                  />
-                ))}
-              </div>
-            </section>
+          <div className="flex-1 mt-20">
+            {activeTab === "basicInfo" ? (
+              <BasicInfoForm />
+            ) : (
+              <div>
+                <div className="mb-10">
+                  <h1 className="text-3xl font-bold mb-2">Platforms</h1>
+                  <p className="text-zinc-400">
+                    You can update and verify your platform details here.
+                  </p>
+                </div>
 
-            <div className="h-px bg-[#2e2e2e] w-full" />
+                <div className="space-y-10">
+                  <section>
+                    <h2 className="text-xl font-semibold mb-4 text-zinc-200">
+                      Development
+                    </h2>
+                    <div className="space-y-2">
+                      {devPlatforms.map((platform) => (
+                        <DataInputCard
+                          key={platform.name}
+                          logo={platform.logo}
+                          name={platform.name}
+                          link={platform.link}
+                          placeholder={platform.placeholder}
+                          value={
+                            user?.platform_data?.[getPlatformKey(platform.name)]
+                              ?.username || ""
+                          }
+                          onChange={(e) => handleInputChange(e, platform)}
+                          onSubmit={() => handleSubmit(platform)}
+                          showInput={true}
+                          buttonText="Submit"
+                        />
+                      ))}
+                    </div>
+                  </section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-4 text-zinc-200">
-                Problem Solving
-              </h2>
-              <div className="space-y-2">
-                {problemSolvingPlatforms.map((platform) => (
-                  <DataInputCard
-                    key={platform.name}
-                    logo={platform.logo}
-                    name={platform.name}
-                    link={platform.link}
-                    placeholder={platform.placeholder}
-                    value={
-                      PlatformUserName[
-                        `${platform.name.toLowerCase()}_username`
-                      ] || ""
-                    }
-                    onChange={handleInputChange}
-                    onSubmit={() => handleSubmit(platform)}
-                    showInput={true}
-                    buttonText="Submit"
-                  />
-                ))}
+                  <div className="h-px bg-[#2e2e2e] w-full" />
+
+                  <section>
+                    <h2 className="text-xl font-semibold mb-4 text-zinc-200">
+                      Problem Solving
+                    </h2>
+                    <div className="space-y-2">
+                      {problemSolvingPlatforms.map((platform) => (
+                        <DataInputCard
+                          key={platform.name}
+                          logo={platform.logo}
+                          name={platform.name}
+                          link={platform.link}
+                          placeholder={platform.placeholder}
+                          value={
+                            user?.platform_data?.[getPlatformKey(platform.name)]
+                              ?.username || ""
+                          }
+                          onChange={(e) => handleInputChange(e, platform)}
+                          onSubmit={() => handleSubmit(platform)}
+                          showInput={true}
+                          buttonText="Submit"
+                        />
+                      ))}
+                    </div>
+                  </section>
+                </div>
               </div>
-            </section>
+            )}
           </div>
         </div>
       </GridComponent>
