@@ -2,6 +2,25 @@ import Navbar from "../../components/Navbar";
 import GridComponent from "../../components/GridComponent";
 import { Footer } from "../../components/CompanyWiseKit/Footer";
 import { Link } from "react-router-dom";
+import dashboardImg from "../../../Assets/landingPage/Kompile (5) 1.png";
+import codolioCardImg from "../../../Assets/landingPage/codolio card.png";
+import codolioPlatformsImg from "../../../Assets/landingPage/codolio-platforms.png";
+import workspaceIcon from "../../../Assets/landingPage/workspace-svgrepo-com.svg";
+import trackerIcon from "../../../Assets/landingPage/tracker.svg";
+import notesIcon from "../../../Assets/landingPage/notes.svg";
+import workspaceGridImg from "../../../Assets/landingPage/grid.png";
+import cumulativeQuestionsImg from "../../../Assets/landingPage/feature.png";
+import activeDaysImg from "../../../Assets/landingPage/feature1 (2).png";
+import heatmapImg from "../../../Assets/landingPage/heatmap.png";
+import dsaAnalysisImg from "../../../Assets/landingPage/feature1.png";
+import classificationImg from "../../../Assets/landingPage/feature1 (1).png";
+import contestStatsImg from "../../../Assets/landingPage/feature1 (4).png";
+import contestGraphImg from "../../../Assets/landingPage/Contest Graph.png";
+import awardsImg from "../../../Assets/landingPage/feature1 (5).png";
+import rankingsImg from "../../../Assets/landingPage/feature1 (6).png";
+import githubStatsHubImg from "../../../Assets/landingPage/feature1 (7).png";
+import visibilityImg from "../../../Assets/landingPage/visibility.png";
+
 export default function LandingPage() {
   const companies = [
     {
@@ -58,12 +77,12 @@ export default function LandingPage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(249,115,22,0.1)] bg-gray-900/50 backdrop-blur-sm">
                 <img
-                  src="/assets/landingPage/Kompile (5) 1.png"
+                  src={dashboardImg}
                   alt="dashboard"
                   className="hidden md:block w-full max-w-[950px] opacity-95"
                 />
                 <img
-                  src="/assets/landingPage/Kompile (5) 1.png"
+                  src={dashboardImg}
                   alt="dashboard-mobile"
                   className="block md:hidden w-full max-w-sm rounded-xl"
                 />
@@ -72,7 +91,7 @@ export default function LandingPage() {
               <div className="md:absolute md:-bottom-12 md:-right-12 flex justify-center mt-10 md:mt-0">
                 <div className="border-[6px] border-[#1a1a1a] rounded-[2.8rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-black ring-1 ring-white/10">
                   <img
-                    src="/assets/landingPage/codolio card.png"
+                    src={codolioCardImg}
                     alt="mobile"
                     className="w-[210px] h-auto object-cover scale-105"
                   />
@@ -135,7 +154,7 @@ export default function LandingPage() {
 
           <div className="flex justify-center mb-24">
             <img
-              src="/assets/landingPage/codolio-platforms.png"
+              src={codolioPlatformsImg}
               alt="platforms"
               className="w-full max-w-2xl drop-shadow-[0_0_30px_rgba(249,115,22,0.1)]"
             />
@@ -162,7 +181,7 @@ export default function LandingPage() {
               <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
-                    src="/assets/landingPage/workspace-svgrepo-com.svg"
+                    src={workspaceIcon}
                     alt="icon"
                     className="w-6 h-6 invert"
                   />
@@ -178,7 +197,7 @@ export default function LandingPage() {
               <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
-                    src="/assets/landingPage/tracker.svg"
+                    src={trackerIcon}
                     alt="icon"
                     className="w-6 h-6 invert"
                   />
@@ -194,7 +213,7 @@ export default function LandingPage() {
               <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
-                    src="/assets/landingPage/notes.svg"
+                    src={notesIcon}
                     alt="icon"
                     className="w-6 h-6 invert"
                   />
@@ -211,7 +230,7 @@ export default function LandingPage() {
 
           <div className="flex justify-center mb-20 px-6">
             <img
-              src="/assets/landingPage/grid.png"
+              src={workspaceGridImg}
               alt="workspace grid"
               className="w-full max-w-5xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-90 border border-white/5"
             />
@@ -239,7 +258,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex-1 flex items-center justify-center min-h-[160px]">
                   <img
-                    src="../../../Assets/landingPage/feature.png"
+                    src={cumulativeQuestionsImg}
                     alt="cumulative questions"
                     className="h-[160px] w-auto object-contain"
                   />
@@ -253,7 +272,7 @@ export default function LandingPage() {
                 <div className="flex-1 flex flex-row items-center gap-5 min-h-[160px]">
                   <div className="flex-none flex items-center justify-center h-[160px]">
                     <img
-                      src="../../../Assets/landingPage/feature1 (2).png"
+                      src={activeDaysImg}
                       alt="active days"
                       className="h-[160px] w-auto object-contain"
                     />
@@ -261,7 +280,7 @@ export default function LandingPage() {
 
                   <div className="flex-1 h-[160px] flex items-center justify-center rounded-2xl overflow-hidden bg-white/[0.03] border border-white/5 p-3">
                     <img
-                      src="../../../Assets/landingPage/heatmap.png"
+                      src={heatmapImg}
                       alt="heatmap"
                       className="w-full h-full object-contain"
                     />
@@ -275,7 +294,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex-1 flex items-center justify-center min-h-[320px]">
                   <img
-                    src="../../../Assets/landingPage/feature1.png"
+                    src={dsaAnalysisImg}
                     alt="dsa analysis"
                     className="w-full h-[320px] object-contain"
                   />
@@ -288,7 +307,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex-1 flex items-center justify-center min-h-[320px]">
                   <img
-                    src="../../../Assets/landingPage/feature1 (1).png"
+                    src={classificationImg}
                     alt="classification"
                     className="w-full h-[320px] object-contain"
                   />
@@ -302,7 +321,7 @@ export default function LandingPage() {
                 <div className="flex-1 flex flex-col gap-4">
                   <div className="flex items-center justify-center h-[120px]">
                     <img
-                      src="../../../Assets/landingPage/feature1 (4).png"
+                      src={contestStatsImg}
                       alt="contest stats"
                       className="h-full w-auto object-contain"
                     />
@@ -310,7 +329,7 @@ export default function LandingPage() {
 
                   <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
                     <img
-                      src="../../../Assets/landingPage/Contest Graph.png"
+                      src={contestGraphImg}
                       alt="contest graph"
                       className="w-full h-[190px] object-contain"
                     />
@@ -325,7 +344,7 @@ export default function LandingPage() {
                 <div className="flex-1 flex flex-col gap-4">
                   <div className="flex items-center justify-center h-[120px] rounded-2xl bg-white/[0.03] border border-white/5 p-3">
                     <img
-                      src="../../../Assets/landingPage/feature1 (5).png"
+                      src={awardsImg}
                       alt="awards"
                       className="h-full w-auto object-contain"
                     />
@@ -333,7 +352,7 @@ export default function LandingPage() {
 
                   <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
                     <img
-                      src="../../../Assets/landingPage/feature1 (6).png"
+                      src={rankingsImg}
                       alt="rankings"
                       className="w-full h-[190px] object-contain"
                     />
@@ -360,7 +379,7 @@ export default function LandingPage() {
 
             <div className="flex justify-center">
               <img
-                src="../../../Assets/landingPage/feature1 (7).png"
+                src={githubStatsHubImg}
                 alt="github-stats-hub"
                 className="w-full max-w-5xl max-h-[400px] rounded-2xl object-contain"
               />
@@ -387,7 +406,7 @@ export default function LandingPage() {
               <div className="relative">
                 <div className="absolute -inset-6 bg-orange-500/10 blur-3xl rounded-full" />
                 <img
-                  src="../../assets/landingpage/visibility.png"
+                  src={visibilityImg}
                   alt="calendar"
                   className="relative w-full max-w-[540px] h-auto rounded-2xl drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
                 />

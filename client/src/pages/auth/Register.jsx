@@ -129,7 +129,7 @@ function Register() {
         leetcode: { username: form.leetcode },
       },
     });
-    navigate("/userdata");
+    navigate("/user_data");
   };
 
   const features = [
