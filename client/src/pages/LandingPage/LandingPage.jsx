@@ -141,17 +141,27 @@ export default function LandingPage() {
             />
           </div>
 
-          <div className="text-center max-w-5xl mx-auto mb-24">
-            <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-              Simplify Your <span className="text-orange-500">Preparation</span>
-            </h3>
-            <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto">
-              Say goodbye to last-minute stress. Track all your questions and
-              notes in one place for easy review and revision.
-            </p>
+          <div className="flex flex-col md:flex-row items-start gap-12 mb-16 max-w-7xl mx-auto px-6">
+            {/* Left: heading + description + CTA */}
+            <div className="md:w-1/2">
+              <h3 className="text-4xl md:text-5xl font-bold mb-5 tracking-tight leading-tight">
+                Simplify Your <span className="text-orange-500">Prep</span>
+              </h3>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-md">
+                Say goodbye to last-minute stress. Track all your questions and
+                notes in one place for easy review and revision.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-bold text-lg transition-colors"
+              >
+                Try Question Tracker <span>→</span>
+              </a>
+            </div>
 
-            <div className="flex flex-wrap justify-center md:justify-end gap-8">
-              <div className="text-center w-[180px]">
+            {/* Right: three feature icons */}
+            <div className="md:w-1/2 flex flex-wrap justify-center md:justify-end gap-10 pt-2">
+              <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
                     src="/assets/landingPage/workspace-svgrepo-com.svg"
@@ -159,15 +169,13 @@ export default function LandingPage() {
                     className="w-6 h-6 invert"
                   />
                 </div>
-                <h4 className="text-white font-bold text-lg mb-2">
-                  My Workspace
-                </h4>
+                <h4 className="text-white font-bold text-base mb-1">My Workspace</h4>
                 <p className="text-gray-400 text-sm leading-snug">
                   Tag & filter questions for easy organization
                 </p>
               </div>
 
-              <div className="text-center w-[180px]">
+              <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
                     src="/assets/landingPage/tracker.svg"
@@ -175,15 +183,13 @@ export default function LandingPage() {
                     className="w-6 h-6 invert"
                   />
                 </div>
-                <h4 className="text-white font-bold text-lg mb-2">
-                  Sheet Tracker
-                </h4>
+                <h4 className="text-white font-bold text-base mb-1">Sheet Tracker</h4>
                 <p className="text-gray-400 text-sm leading-snug">
                   Track all coding sheets in one place
                 </p>
               </div>
 
-              <div className="text-center w-[180px]">
+              <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
                     src="/assets/landingPage/notes.svg"
@@ -191,22 +197,11 @@ export default function LandingPage() {
                     className="w-6 h-6 invert"
                   />
                 </div>
-                <h4 className="text-white font-bold text-lg mb-2">
-                  Enhanced Notes
-                </h4>
+                <h4 className="text-white font-bold text-base mb-1">Enhanced Notes</h4>
                 <p className="text-gray-400 text-sm leading-snug">
-                  Add detailed notes to questions easily
+                  Add detailed notes to questions easily.
                 </p>
               </div>
-            </div>
-
-            <div className="mt-12">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-bold text-lg transition-colors"
-              >
-                Try Question Tracker <span>→</span>
-              </a>
             </div>
           </div>
 
