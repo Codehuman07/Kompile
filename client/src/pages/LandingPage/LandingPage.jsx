@@ -36,7 +36,7 @@ export default function LandingPage() {
       <Navbar />
 
       <GridComponent>
-        <div className="pt-24 pb-16 px-6 text-center">
+        <div className="pt-36 pb-16 px-6 text-center">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 uppercase tracking-tight">
             Track, Analyze <span className="text-orange-500">&</span> Share
           </h1>
@@ -214,11 +214,11 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="flex justify-center mb-20">
+          <div className="flex justify-center mb-20 px-6">
             <img
               src="../../../Assets/landingPage/grid.png"
               alt="workspace grid"
-              className="w-full rounded-xl shadow-2xl opacity-90"
+              className="w-full max-w-5xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-90 border border-white/5"
             />
           </div>
         </div>
@@ -237,90 +237,129 @@ export default function LandingPage() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-              <div className="md:col-span-3 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
+            {/* ── Portfolio Bento Grid ── */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+              {/* ── Row 1 ── */}
+              {/* Card: See cumulative questions solved — narrow */}
+              <div className="md:col-span-4 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
+                <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   See cumulative questions solved
                 </p>
-                <img
-                  src="../../../Assets/landingPage/feature1 (6).png"
-                  alt="stats"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="md:col-span-3 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
-                  Total Active Days
-                </p>
-                <img
-                  src="../../../Assets/landingPage/feature1 (5).png"
-                  alt="active days"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
-                  Track your streak,across multiple platforms
-                </p>
-                <img
-                  src="../../../Assets/landingPage/feature1 (4).png"
-                  alt="heatmap"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
-                  Identify your strengths and areas of improvement
-                </p>
-                <img
-                  src="../../../Assets/landingPage/feature1 (1).png"
-                  alt="dsa analysis"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
-                  Get classification of Problems solved
-                </p>
-                <img
-                  src="../../../Assets/landingPage/feature1.png"
-                  alt="classification"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
-                  Monitor your ratings in contests over time
-                </p>
-                <img
-                  src="../../../Assets/landingPage/Contest Graph.png"
-                  alt="contest graph"
-                  className="w-full"
-                />
-              </div>
-
-              <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
-                <p className="text-gray-400 text-sm font-medium mb-4">
-                  Showcase your Achievements
-                </p>
-                <div className="flex flex-col gap-4">
+                <div className="flex-1 flex items-center justify-center min-h-[160px]">
                   <img
-                    src="../../../Assets/landingPage/feature1 (7).png"
-                    alt="awards"
-                    className="w-full"
-                  />
-                  <img
-                    src="../../../Assets/landingPage/feature1 (8).png"
-                    alt="rankings"
-                    className="w-full"
+                    src="../../../Assets/landingPage/feature.png"
+                    alt="cumulative questions"
+                    className="h-[160px] w-auto object-contain"
                   />
                 </div>
               </div>
+
+              {/* Card: Track your streak — wide */}
+              <div className="md:col-span-8 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
+                <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
+                  Track your streak, across multiple platforms
+                </p>
+                <div className="flex-1 flex flex-row items-center gap-5 min-h-[160px]">
+                  {/* Active Days stat card */}
+                  <div className="flex-none flex items-center justify-center h-[160px]">
+                    <img
+                      src="../../../Assets/landingPage/feature1 (2).png"
+                      alt="active days"
+                      className="h-[160px] w-auto object-contain"
+                    />
+                  </div>
+                  {/* Heatmap — fills rest */}
+                  <div className="flex-1 h-[160px] flex items-center justify-center rounded-2xl overflow-hidden bg-white/[0.03] border border-white/5 p-3">
+                    <img
+                      src="../../../Assets/landingPage/heatmap.png"
+                      alt="heatmap"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* ── Row 2 ── */}
+              {/* Card: Identify strengths */}
+              <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
+                <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
+                  Identify your strengths and areas of improvement
+                </p>
+                <div className="flex-1 flex items-center justify-center min-h-[320px]">
+                  <img
+                    src="../../../Assets/landingPage/feature1.png"
+                    alt="dsa analysis"
+                    className="w-full h-[320px] object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Card: Get classification */}
+              <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
+                <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
+                  Get classification of Problems solved
+                </p>
+                <div className="flex-1 flex items-center justify-center min-h-[320px]">
+                  <img
+                    src="../../../Assets/landingPage/feature1 (1).png"
+                    alt="classification"
+                    className="w-full h-[320px] object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* ── Row 3 ── */}
+              {/* Card: Monitor ratings */}
+              <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
+                <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
+                  Monitor your ratings in contests over time
+                </p>
+                <div className="flex-1 flex flex-col gap-4">
+                  {/* Contest count */}
+                  <div className="flex items-center justify-center h-[120px]">
+                    <img
+                      src="../../../Assets/landingPage/feature1 (4).png"
+                      alt="contest stats"
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  {/* Rating graph */}
+                  <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
+                    <img
+                      src="../../../Assets/landingPage/Contest Graph.png"
+                      alt="contest graph"
+                      className="w-full h-[190px] object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Card: Showcase achievements */}
+              <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
+                <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
+                  Showcase your Achievements
+                </p>
+                <div className="flex-1 flex flex-col gap-4">
+                  {/* Awards badges */}
+                  <div className="flex items-center justify-center h-[120px] rounded-2xl bg-white/[0.03] border border-white/5 p-3">
+                    <img
+                      src="../../../Assets/landingPage/feature1 (5).png"
+                      alt="awards"
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  {/* Contest ranking */}
+                  <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
+                    <img
+                      src="../../../Assets/landingPage/feature1 (6).png"
+                      alt="rankings"
+                      className="w-full h-[190px] object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
@@ -339,19 +378,11 @@ export default function LandingPage() {
               </a>
             </div>
 
-            <div className="bg-[#0d0d0d] border border-gray-800 rounded-3xl p-4 mb-8">
+            <div className="flex justify-center">
               <img
                 src="../../../Assets/landingPage/feature1 (7).png"
                 alt="github-stats-hub"
-                className="w-full rounded-2xl"
-              />
-            </div>
-
-            <div className="bg-[#0d0d0d] border border-gray-800 rounded-3xl p-4">
-              <img
-                src="../../../Assets/landingPage/feature1 (8).png"
-                alt="projects-showcase"
-                className="w-full rounded-2xl"
+                className="w-full max-w-5xl max-h-[400px] rounded-2xl object-contain"
               />
             </div>
           </div>
@@ -372,12 +403,14 @@ export default function LandingPage() {
                 Try Event Tracker →
               </a>
             </div>
-            <div className="md:w-1/2">
-              <div className="p-2 bg-gray-900/40 border border-gray-800 rounded-[2rem] shadow-2xl">
+            <div className="md:w-1/2 flex justify-center">
+              <div className="relative">
+                {/* Soft ambient glow behind the image */}
+                <div className="absolute -inset-6 bg-orange-500/10 blur-3xl rounded-full" />
                 <img
                   src="../../assets/landingpage/visibility.png"
                   alt="calendar"
-                  className="w-full h-auto rounded-[1.5rem]"
+                  className="relative w-full max-w-[540px] h-auto rounded-2xl drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
                 />
               </div>
             </div>
