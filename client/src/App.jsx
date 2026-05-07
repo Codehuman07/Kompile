@@ -5,20 +5,26 @@ import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import CompanyWiseKit from "./pages/CompanyWiseKit/CompanyWiseKit.jsx";
+import CompanyDashboard from "./pages/CompanyWiseKit/CompanyDashboard.jsx";
 import Contest from "./pages/event/Contest.jsx";
 import UserData from "./components/UserData.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/dashboard" element={<Home />} />
       <Route path="/company" element={<CompanyWiseKit />} />
+      <Route path="/company/:companySlug" element={<CompanyDashboard />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/events" element={<Contest />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/user_data" element={<UserData />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
 

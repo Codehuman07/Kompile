@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "../../components/Navbar";
 import GridComponent from "../../components/GridComponent";
 
-// Import the extracted components
+// Import the original landing page components
 import { Hero } from "../../components/CompanyWiseKit/Hero";
 import { FeatureTable } from "../../components/CompanyWiseKit/FeatureTable";
 import { CompanyLogos } from "../../components/CompanyWiseKit/CompanyLogos";
