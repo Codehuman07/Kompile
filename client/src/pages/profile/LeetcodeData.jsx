@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../../context/UserContext.jsx";
 import fetchUserTopicStats from "../../api/leetcodeApi.js";
 import DonutChart from "../../components/DonutChart.jsx";
 import HeatmapComponent from "../../components/HeatmapComponent.jsx";
@@ -17,9 +18,16 @@ function LeetcodeData() {
   const [totalCount, setTotalCount] = useState(0);
   const [heatMap, setHeatMap] = useState({});
 
+  const { user } = useContext(UserContext);
+  const username = user?.platform_data?.leetcode?.username;
+
   useEffect(() => {
     const loadData = async () => {
-      const result = await fetchUserTopicStats("Sarthak229");
+      if (!username) {
+        setLoading(false);
+        return;
+      }
+      const result = await fetchUserTopicStats(username);
       console.log(result);
       setData(result);
 
@@ -85,7 +93,9 @@ function LeetcodeData() {
                 Contest Rating
               </h1>
               <h1 className="text-4xl font-bold mt-2 text-[#f89f1b]">
-                {Math.round(data?.contestRanking?.rating) ?? "—"}
+                {data?.contestRanking?.rating
+                  ? Math.round(data.contestRanking.rating)
+                  : "—"}
               </h1>
             </div>
             <div className="w-px h-12 bg-[#2e2e2e]" />

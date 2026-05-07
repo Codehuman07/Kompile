@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import GridComponent from "../../components/GridComponent";
 
 // icons
@@ -105,10 +107,17 @@ function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
+  const { login } = useContext(UserContext);
+
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
   const handleSubmit = (e) => {
     e.preventDefault();
+    login({
+      email: form.email,
+      password: form.password,
+    });
+    navigate("/user_data");
   };
 
   const features = [

@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import { Star, GitCommit, GitPullRequest, AlertCircle } from "lucide-react";
 import getGithubStats from "../../api/githubApi";
 import HeatmapComponent from "../../components/HeatmapComponent";
@@ -9,7 +10,8 @@ function GithubData() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const username = "sarthak-gupta229";
+  const { user } = useContext(UserContext);
+  const username = user?.platform_data?.github?.username;
   useEffect(() => {
     const fetchGithubStats = async () => {
       try {
@@ -30,6 +32,14 @@ function GithubData() {
     return (
       <div className="flex justify-center items-center w-full h-48 bg-[#151515] rounded-xl border border-[#2e2e2e] mb-5">
         <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-zinc-300"></div>
+      </div>
+    );
+  }
+
+  if (error || !githubData) {
+    return (
+      <div className="flex justify-center items-center w-full h-48 bg-[#151515] rounded-xl border border-[#2e2e2e] mb-5 text-red-500">
+        Failed to load GitHub data. Please check your token or try again later.
       </div>
     );
   }

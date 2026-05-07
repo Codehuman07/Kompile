@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import GridComponent from "../../components/GridComponent";
 import Navbar from "../../components/Navbar";
 import { UserCog } from "lucide-react";
@@ -9,51 +10,36 @@ import ProfileSidebar from "./ProfileSidebar";
 
 function Profile() {
   const [activeTab, setActiveTab] = useState("leetcode");
-  // dummydata
+  const { user } = useContext(UserContext);
+
   const userData = {
-    name: "Sarthak Gupta",
-    username: "Sarthak229",
-
-    profileImage: "",
-
+    name: `${user?.firstName || ""} ${user?.lastName || ""}`.trim() || user?.name || "User Name",
+    username: user?.firstName || "Username",
+    profileImage: user?.avatar || "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     socialLinks: {
-      email: "sarthakgupta229@gmail.com",
-      linkedin: "https://linkedin.com/in/sarthak229",
-      twitter: "https://x.com/Sarthak229",
-      website: "https://sarthak.dev",
+      email: user?.email || "No email",
+      linkedin: "https://linkedin.com",
+      twitter: "https://x.com",
+      website: "https://example.com",
       resume: "https://example.com/resume.pdf",
     },
-
-    location: "India",
-
-    university: "Rishihood University",
-
+    location: user?.country || "Not set",
+    university: user?.college || "Not set",
     stats: {
       leetcode: {
         rating: 1820,
         problemsSolved: 650,
       },
-
       codeforces: {
         rating: 1450,
         maxRating: 1520,
       },
-
       github: {
         repositories: 34,
         followers: 120,
       },
     },
-
-    skills: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Python",
-      "C++",
-      "Tailwind CSS",
-    ],
+    skills: user?.techStack ? user.techStack.split(",").map(s => s.trim()) : ["React", "Node.js", "C++"],
   };
 
   return (

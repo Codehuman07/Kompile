@@ -86,5 +86,3 @@ export default async function getGithubStats(username) {
 
   return data?.data?.user;
 }
-
-getGithubStats("sarthakgupta1309").then(console.log);

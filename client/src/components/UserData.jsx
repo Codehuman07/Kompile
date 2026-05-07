@@ -5,7 +5,7 @@ import DataInputCard from "./DataInputCard.jsx";
 import { UserContext } from "../context/UserContext.jsx";
 import { ArrowBigLeft, User, LayoutGrid } from "lucide-react";
 import { NavLink } from "react-router-dom";
-// Logo imports are replaced with direct paths since assets are in public directory
+import BasicInfoForm from "./BasicInfoForm.jsx";
 
 const getPlatformKey = (platformName) => {
   const map = {
@@ -29,30 +29,30 @@ function UserData() {
       link: "https://leetcode.com/u/",
       placeholder: "johndoe",
     },
-    {
-      name: "GeeksForGeeks",
-      logo: "/assets/platformLogos/GeeksForGeeks.png",
-      link: "https://www.geeksforgeeks.org/user/",
-      placeholder: "johndoe",
-    },
+    // {
+    //   name: "GeeksForGeeks",
+    //   logo: "/assets/platformLogos/GeeksForGeeks.png",
+    //   link: "https://www.geeksforgeeks.org/user/",
+    //   placeholder: "johndoe",
+    // },
     // {
     //   name: "CodeChef",
     //   logo: "codechef-logo.png",
     //   link: "https://www.codechef.com/users/",
     //   placeholder: "johndoe",
     // },
-    {
-      name: "CodeForces",
-      logo: "/assets/platformLogos/codeforces-logo.png",
-      link: "https://codeforces.com/profile/",
-      placeholder: "johndoe",
-    },
-    {
-      name: "HackerRank",
-      logo: "/assets/platformLogos/hackerrank-logo.png",
-      link: "https://www.hackerrank.com/profile/",
-      placeholder: "johndoe",
-    },
+    // {
+    //   name: "CodeForces",
+    //   logo: "/assets/platformLogos/codeforces-logo.png",
+    //   link: "https://codeforces.com/profile/",
+    //   placeholder: "johndoe",
+    // },
+    // {
+    //   name: "HackerRank",
+    //   logo: "/assets/platformLogos/hackerrank-logo.png",
+    //   link: "https://www.hackerrank.com/profile/",
+    //   placeholder: "johndoe",
+    // },
     // {
     //   name: "AtCoder",
     //   logo: "atcoder-logo.png",

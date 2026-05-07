@@ -12,7 +12,6 @@ function BasicInfoForm() {
 
   const handleSave = () => {
     console.log("[UserContext] Basic Info saved:", user);
-    // TODO: connect to backend API call here
   };
 
   return (
@@ -23,16 +22,18 @@ function BasicInfoForm() {
       </div>
 
       <div className="space-y-10">
-        {/* ── Basic Details ── */}
         <section>
-          <h2 className="text-xl font-semibold mb-6 text-zinc-200">Basic Details</h2>
+          <h2 className="text-xl font-semibold mb-6 text-zinc-200">
+            Basic Details
+          </h2>
           <div className="bg-[#141414] border border-[#2e2e2e] rounded-xl p-6 space-y-6">
-
-            {/* Avatar row */}
             <div className="flex items-center gap-6">
               <div className="relative">
                 <img
-                  src={user.avatar || "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"}
+                  src={
+                    user.avatar ||
+                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+                  }
                   alt="Profile"
                   className="w-24 h-24 rounded-full object-cover"
                 />
@@ -47,10 +48,12 @@ function BasicInfoForm() {
                 </button>
               </div>
 
-              {/* Name fields */}
               <div className="flex-1">
                 <p className="text-sm text-zinc-400 mb-2">
-                  Codolio Id: <span className="text-blue-500 font-medium ml-2">Sarthak229</span>
+                  Codolio Id:{" "}
+                  <span className="text-blue-500 font-medium ml-2">
+                    {user?.firstName || "Not set"}
+                  </span>
                 </p>
                 <div className="flex gap-4">
                   <div className="flex-1">
@@ -60,18 +63,20 @@ function BasicInfoForm() {
                     <input
                       type="text"
                       name="firstName"
-                      value={user.firstName}
+                      value={user?.firstName || ""}
                       onChange={handleChange}
                       className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 focus:outline-none focus:border-[#f89f1b]"
                       placeholder="John"
                     />
                   </div>
                   <div className="flex-1">
-                    <label className="block text-sm font-medium mb-2">Last Name</label>
+                    <label className="block text-sm font-medium mb-2">
+                      Last Name
+                    </label>
                     <input
                       type="text"
                       name="lastName"
-                      value={user.lastName}
+                      value={user?.lastName || ""}
                       onChange={handleChange}
                       className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 focus:outline-none focus:border-[#f89f1b]"
                       placeholder="Doe"
@@ -81,24 +86,24 @@ function BasicInfoForm() {
               </div>
             </div>
 
-            {/* Email (read-only) */}
             <div>
               <label className="block text-sm font-medium mb-2">Email</label>
               <input
                 type="email"
                 name="email"
-                value={user.email}
+                value={user?.email || ""}
                 readOnly
                 className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 text-zinc-500 cursor-not-allowed"
               />
             </div>
 
-            {/* Bio */}
             <div>
-              <label className="block text-sm font-medium mb-2">Bio (Max 200 Characters)</label>
+              <label className="block text-sm font-medium mb-2">
+                Bio (Max 200 Characters)
+              </label>
               <textarea
                 name="bio"
-                value={user.bio}
+                value={user?.bio || ""}
                 onChange={handleChange}
                 maxLength={200}
                 className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 h-24 resize-none focus:outline-none focus:border-[#f89f1b]"
@@ -106,7 +111,6 @@ function BasicInfoForm() {
               />
             </div>
 
-            {/* Country */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Country <span className="text-red-500">*</span>
@@ -114,7 +118,7 @@ function BasicInfoForm() {
               <div className="relative">
                 <select
                   name="country"
-                  value={user.country}
+                  value={user?.country || ""}
                   onChange={handleChange}
                   className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-[#f89f1b]"
                 >
@@ -128,14 +132,17 @@ function BasicInfoForm() {
                   <option value="Other">Other</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </div>
               </div>
             </div>
 
-            {/* Tech Stack */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Tech Stack <span className="text-red-500">*</span>
@@ -143,7 +150,7 @@ function BasicInfoForm() {
               <input
                 type="text"
                 name="techStack"
-                value={user.techStack}
+                value={user?.techStack || ""}
                 onChange={handleChange}
                 className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 focus:outline-none focus:border-[#f89f1b]"
                 placeholder="e.g. React, Node.js, C++ (comma separated)"
@@ -152,27 +159,26 @@ function BasicInfoForm() {
           </div>
         </section>
 
-        {/* ── Educational Details ── */}
         <section>
-          <h2 className="text-xl font-semibold mb-6 text-zinc-200">Educational Details</h2>
+          <h2 className="text-xl font-semibold mb-6 text-zinc-200">
+            Educational Details
+          </h2>
           <div className="bg-[#141414] border border-[#2e2e2e] rounded-xl p-6 space-y-6">
-
-            {/* College */}
             <div>
               <label className="block text-sm font-medium mb-2">
-                School / College / University <span className="text-red-500">*</span>
+                School / College / University{" "}
+                <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
                 name="college"
-                value={user.college}
+                value={user?.college || ""}
                 onChange={handleChange}
                 className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 focus:outline-none focus:border-[#f89f1b]"
                 placeholder="e.g. Rishihood University"
               />
             </div>
 
-            {/* Degree */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Degree <span className="text-red-500">*</span>
@@ -180,28 +186,39 @@ function BasicInfoForm() {
               <div className="relative">
                 <select
                   name="degree"
-                  value={user.degree}
+                  value={user?.degree || ""}
                   onChange={handleChange}
                   className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-[#f89f1b]"
                 >
                   <option value="">Select degree</option>
-                  <option value="Bachelor of Technology">Bachelor of Technology</option>
-                  <option value="Bachelor of Science">Bachelor of Science</option>
-                  <option value="Bachelor of Engineering">Bachelor of Engineering</option>
-                  <option value="Master of Technology">Master of Technology</option>
+                  <option value="Bachelor of Technology">
+                    Bachelor of Technology
+                  </option>
+                  <option value="Bachelor of Science">
+                    Bachelor of Science
+                  </option>
+                  <option value="Bachelor of Engineering">
+                    Bachelor of Engineering
+                  </option>
+                  <option value="Master of Technology">
+                    Master of Technology
+                  </option>
                   <option value="Master of Science">Master of Science</option>
                   <option value="PhD">PhD</option>
                   <option value="Other">Other</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </div>
               </div>
             </div>
 
-            {/* Branch */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Branch <span className="text-red-500">*</span>
@@ -209,27 +226,36 @@ function BasicInfoForm() {
               <div className="relative">
                 <select
                   name="branch"
-                  value={user.branch}
+                  value={user?.branch || ""}
                   onChange={handleChange}
                   className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-[#f89f1b]"
                 >
                   <option value="">Select branch</option>
                   <option value="Computer Science">Computer Science</option>
-                  <option value="Information Technology">Information Technology</option>
-                  <option value="Electronics & Communication">Electronics & Communication</option>
-                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Information Technology">
+                    Information Technology
+                  </option>
+                  <option value="Electronics & Communication">
+                    Electronics & Communication
+                  </option>
+                  <option value="Mechanical Engineering">
+                    Mechanical Engineering
+                  </option>
                   <option value="Civil Engineering">Civil Engineering</option>
                   <option value="Other">Other</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </div>
               </div>
             </div>
 
-            {/* Graduation Year */}
             <div>
               <label className="block text-sm font-medium mb-2">
                 Year of Graduation <span className="text-red-500">*</span>
@@ -237,17 +263,23 @@ function BasicInfoForm() {
               <div className="relative">
                 <select
                   name="graduationYear"
-                  value={user.graduationYear}
+                  value={user?.graduationYear || ""}
                   onChange={handleChange}
                   className="w-full bg-[#1f1f1f] border border-[#2e2e2e] rounded-lg px-4 py-2 appearance-none focus:outline-none focus:border-[#f89f1b]"
                 >
                   <option value="">Select year</option>
                   {[2024, 2025, 2026, 2027, 2028, 2029, 2030].map((yr) => (
-                    <option key={yr} value={String(yr)}>{yr}</option>
+                    <option key={yr} value={String(yr)}>
+                      {yr}
+                    </option>
                   ))}
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </div>
@@ -256,7 +288,6 @@ function BasicInfoForm() {
           </div>
         </section>
 
-        {/* ── Save Button ── */}
         <div className="flex justify-end">
           <button
             onClick={handleSave}

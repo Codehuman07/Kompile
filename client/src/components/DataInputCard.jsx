@@ -3,7 +3,10 @@ import React from "react";
 function DataInputCard({ logo, name, placeholder, link, value, onChange, onSubmit, showInput = true, buttonText = "Submit" }) {
   return (
     <>
-      <div className="bg-[#141414] text-white border border-gray-800 rounded-xl p-4 flex items-center justify-between gap-4 w-full">
+      <form 
+        onSubmit={(e) => { e.preventDefault(); onSubmit(name); }}
+        className="bg-[#141414] text-white border border-gray-800 rounded-xl p-4 flex items-center justify-between gap-4 w-full"
+      >
         <div className="flex items-center gap-3 min-w-[180px]">
           <img src={logo} alt={name} className="w-6 h-6 object-contain" />
           <span className="text-lg font-medium">{name}</span>
@@ -19,18 +22,19 @@ function DataInputCard({ logo, name, placeholder, link, value, onChange, onSubmi
               value={value}
               onChange={onChange}
               placeholder={placeholder}
+              required
               className="bg-[#1a1a1a] border border-gray-700 rounded-lg px-4 py-2 outline-none focus:border-gray-500"
             />
           )}
         </div>
 
         <button
-          onClick={() => onSubmit(name)}
+          type="submit"
           className="bg-[#1f1f1f] hover:bg-[#2a2a2a] border border-gray-700 px-4 py-2 rounded-lg transition"
         >
           {buttonText}
         </button>
-      </div>
+      </form>
     </>
   );
 }

@@ -1,4 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext.jsx";
 
 const navLinkCls = ({ isActive }) =>
   isActive
@@ -6,6 +8,16 @@ const navLinkCls = ({ isActive }) =>
     : "text-gray-300 hover:text-white transition";
 
 function Navbar() {
+  const { user, logout } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
+  const isLoggedIn = user && user.email;
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#0f0f0f] border-b border-gray-800 px-6 py-3 flex items-center justify-between h-18 z-50">
       <Link to="/" className="flex items-center gap-2 box-border">
@@ -21,7 +33,7 @@ function Navbar() {
 
       <div className="hidden md:flex items-center gap-8 text-sm">
         <NavLink to="/" end className={navLinkCls}>
-          Question Tracker
+          Home
         </NavLink>
         <NavLink to="/company" className={navLinkCls}>
           Company Wise Kit
@@ -39,12 +51,21 @@ function Navbar() {
             className="h-10"
           />
         </button> */}
-        <Link
-          to="/login"
-          className="px-5 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-orange-500/30"
-        >
-          Login
-        </Link>
+        {isLoggedIn ? (
+          <button
+            onClick={handleLogout}
+            className="px-5 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-orange-500/30 cursor-pointer"
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="px-5 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-orange-500/30"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </nav>
   );

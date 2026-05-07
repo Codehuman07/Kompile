@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import GridComponent from "../../components/GridComponent";
 import { Footer } from "../../components/CompanyWiseKit/Footer";
-
+import { Link } from "react-router-dom";
 export default function LandingPage() {
   const companies = [
     {
@@ -113,7 +113,7 @@ export default function LandingPage() {
                     {item.desc}
                   </p>
                   <button className="text-orange-500 font-bold hover:underline text-sm uppercase tracking-wide">
-                    View Sheet →
+                    <Link to="/company">View Sheet</Link>
                   </button>
                 </div>
               ))}
@@ -142,7 +142,6 @@ export default function LandingPage() {
           </div>
 
           <div className="flex flex-col md:flex-row items-start gap-12 mb-16 max-w-7xl mx-auto px-6">
-            {/* Left: heading + description + CTA */}
             <div className="md:w-1/2">
               <h3 className="text-4xl md:text-5xl font-bold mb-5 tracking-tight leading-tight">
                 Simplify Your <span className="text-orange-500">Prep</span>
@@ -159,7 +158,6 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* Right: three feature icons */}
             <div className="md:w-1/2 flex flex-wrap justify-center md:justify-end gap-10 pt-2">
               <div className="text-center w-[160px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -169,7 +167,9 @@ export default function LandingPage() {
                     className="w-6 h-6 invert"
                   />
                 </div>
-                <h4 className="text-white font-bold text-base mb-1">My Workspace</h4>
+                <h4 className="text-white font-bold text-base mb-1">
+                  My Workspace
+                </h4>
                 <p className="text-gray-400 text-sm leading-snug">
                   Tag & filter questions for easy organization
                 </p>
@@ -183,7 +183,9 @@ export default function LandingPage() {
                     className="w-6 h-6 invert"
                   />
                 </div>
-                <h4 className="text-white font-bold text-base mb-1">Sheet Tracker</h4>
+                <h4 className="text-white font-bold text-base mb-1">
+                  Sheet Tracker
+                </h4>
                 <p className="text-gray-400 text-sm leading-snug">
                   Track all coding sheets in one place
                 </p>
@@ -197,7 +199,9 @@ export default function LandingPage() {
                     className="w-6 h-6 invert"
                   />
                 </div>
-                <h4 className="text-white font-bold text-base mb-1">Enhanced Notes</h4>
+                <h4 className="text-white font-bold text-base mb-1">
+                  Enhanced Notes
+                </h4>
                 <p className="text-gray-400 text-sm leading-snug">
                   Add detailed notes to questions easily.
                 </p>
@@ -228,10 +232,7 @@ export default function LandingPage() {
               </a>
             </div>
 
-            {/* ── Portfolio Bento Grid ── */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-              {/* ── Row 1 ── */}
-              {/* Card: See cumulative questions solved — narrow */}
               <div className="md:col-span-4 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
                 <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   See cumulative questions solved
@@ -245,13 +246,11 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Card: Track your streak — wide */}
               <div className="md:col-span-8 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
                 <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   Track your streak, across multiple platforms
                 </p>
                 <div className="flex-1 flex flex-row items-center gap-5 min-h-[160px]">
-                  {/* Active Days stat card */}
                   <div className="flex-none flex items-center justify-center h-[160px]">
                     <img
                       src="../../../Assets/landingPage/feature1 (2).png"
@@ -259,7 +258,7 @@ export default function LandingPage() {
                       className="h-[160px] w-auto object-contain"
                     />
                   </div>
-                  {/* Heatmap — fills rest */}
+
                   <div className="flex-1 h-[160px] flex items-center justify-center rounded-2xl overflow-hidden bg-white/[0.03] border border-white/5 p-3">
                     <img
                       src="../../../Assets/landingPage/heatmap.png"
@@ -270,8 +269,6 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* ── Row 2 ── */}
-              {/* Card: Identify strengths */}
               <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
                 <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   Identify your strengths and areas of improvement
@@ -285,7 +282,6 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Card: Get classification */}
               <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
                 <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   Get classification of Problems solved
@@ -299,14 +295,11 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* ── Row 3 ── */}
-              {/* Card: Monitor ratings */}
               <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
                 <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   Monitor your ratings in contests over time
                 </p>
                 <div className="flex-1 flex flex-col gap-4">
-                  {/* Contest count */}
                   <div className="flex items-center justify-center h-[120px]">
                     <img
                       src="../../../Assets/landingPage/feature1 (4).png"
@@ -314,7 +307,7 @@ export default function LandingPage() {
                       className="h-full w-auto object-contain"
                     />
                   </div>
-                  {/* Rating graph */}
+
                   <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
                     <img
                       src="../../../Assets/landingPage/Contest Graph.png"
@@ -325,13 +318,11 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Card: Showcase achievements */}
               <div className="md:col-span-6 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
                 <p className="text-sm text-gray-300 font-semibold mb-4 text-center tracking-wide">
                   Showcase your Achievements
                 </p>
                 <div className="flex-1 flex flex-col gap-4">
-                  {/* Awards badges */}
                   <div className="flex items-center justify-center h-[120px] rounded-2xl bg-white/[0.03] border border-white/5 p-3">
                     <img
                       src="../../../Assets/landingPage/feature1 (5).png"
@@ -339,7 +330,7 @@ export default function LandingPage() {
                       className="h-full w-auto object-contain"
                     />
                   </div>
-                  {/* Contest ranking */}
+
                   <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
                     <img
                       src="../../../Assets/landingPage/feature1 (6).png"
@@ -394,7 +385,6 @@ export default function LandingPage() {
             </div>
             <div className="md:w-1/2 flex justify-center">
               <div className="relative">
-                {/* Soft ambient glow behind the image */}
                 <div className="absolute -inset-6 bg-orange-500/10 blur-3xl rounded-full" />
                 <img
                   src="../../assets/landingpage/visibility.png"

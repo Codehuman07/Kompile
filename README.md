@@ -1,6 +1,7 @@
 <div align="center">
 
 # 🦊 Kompile
+
 **Your all-in-one competitive programming & development dashboard.**
 
 A full-stack platform that empowers developers and competitive programmers with unified stats, live contest tracking, and role-based dashboards — keeping your entire coding journey in one place.
@@ -27,31 +28,22 @@ Developers and competitive programmers often juggle 4–5 different tabs just to
 
 ## Features
 
-| Feature | Description |
-| --- | --- |
-| 🧑‍💻 **Profile Dashboard** | Aggregates your stats from LeetCode, Codeforces, HackerRank, and GitHub into a single profile with streaks and DSA topic breakdowns |
-| 📅 **Contest Calendar** | Never miss a contest — pulls upcoming events from Codeforces, AtCoder, CodeChef, GeeksforGeeks, and more with one-click "Add to Calendar" |
-| 🏢 **Company-Wise Sheets** | Curated DSA problem sets for top companies like Google, Amazon, Meta, and Microsoft — filterable by difficulty, topic, and platform |
-| 📊 **Dev Stats** | Syncs with GitHub to display language usage, commit history, PRs, stars, and pinned projects |
-| 🪪 **Kompile Card** | A verified developer card that serves as your stamp of authenticity and unlocks platform leaderboard rankings |
+| Feature                    | Description                                                                                                                               |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 🧑‍💻 **Profile Dashboard**   | Aggregates your stats from LeetCode, Codeforces, HackerRank, and GitHub into a single profile with streaks and DSA topic breakdowns       |
+| 📅 **Contest Calendar**    | Never miss a contest — pulls upcoming events from Codeforces, AtCoder, CodeChef, GeeksforGeeks, and more with one-click "Add to Calendar" |
+| 🏢 **Company-Wise Sheets** | Curated DSA problem sets for top companies like Google, Amazon, Meta, and Microsoft — filterable by difficulty, topic, and platform       |
+| 📊 **Dev Stats**           | Syncs with GitHub to display language usage, commit history, PRs, stars, and pinned projects                                              |
+| 🪪 **Kompile Card**        | A verified developer card that serves as your stamp of authenticity and unlocks platform leaderboard rankings                             |
 
 ---
 
 ## Tech Stack
 
 **Frontend**
+
 - React 18 + Vite — Fast, modern UI framework
 - Tailwind CSS — Utility-first styling
-
-**Backend**
-- Node.js + Express.js — REST API server
-- MongoDB — NoSQL database for flexible, scalable data storage
-- Mongoose — ODM (Object Data Modeling) library for MongoDB, providing schema-based data validation and query building
-
-**Integrations & Auth**
-- LeetCode, Codeforces, HackerRank, GitHub APIs — Live data aggregation
-- JWT — Stateless, role-based token authentication
-- dotenv — Environment configuration
 
 ---
 
@@ -63,6 +55,6 @@ Developers and competitive programmers often juggle 4–5 different tabs just to
 
 <div align="center">
 
-*Built for coders, by coders.*
+_Built for coders, by coders._
 
 </div>

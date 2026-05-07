@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import GridComponent from "../../components/GridComponent";
 
 // icons
@@ -108,13 +110,26 @@ function Register() {
     email: "",
     password: "",
     confirm: "",
+    leetcode: "",
+    github: "",
   });
   const navigate = useNavigate();
+  const { login } = useContext(UserContext);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
   const handleSubmit = (e) => {
     e.preventDefault();
+    login({
+      name: form.name,
+      email: form.email,
+      password: form.password,
+      platform_data: {
+        github: { username: form.github },
+        leetcode: { username: form.leetcode },
+      },
+    });
+    navigate("/userdata");
   };
 
   const features = [
@@ -278,6 +293,39 @@ function Register() {
                       {showConfirm ? <EyeOffIcon /> : <EyeIcon />}
                     </button>
                   </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="reg-leetcode"
+                    className="text-gray-300 text-sm"
+                  >
+                    LeetCode Username
+                  </label>
+                  <input
+                    id="reg-leetcode"
+                    name="leetcode"
+                    type="text"
+                    placeholder="Enter LeetCode username"
+                    value={form.leetcode}
+                    onChange={handleChange}
+                    className={inputCls}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="reg-github" className="text-gray-300 text-sm">
+                    GitHub Username
+                  </label>
+                  <input
+                    id="reg-github"
+                    name="github"
+                    type="text"
+                    placeholder="Enter GitHub username"
+                    value={form.github}
+                    onChange={handleChange}
+                    className={inputCls}
+                  />
                 </div>
 
                 {/* submit */}

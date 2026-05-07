@@ -12,12 +12,19 @@ export const UserProvider = ({ children }) => {
       name: "",
       email: "",
       password: "",
+      firstName: "",
+      lastName: "",
+      bio: "",
+      country: "",
+      techStack: "",
+      college: "",
+      degree: "",
+      branch: "",
+      graduationYear: "",
+      avatar: "",
       platform_data: {
-        github: "",
-        leetcode: "",
-        codeforces: "",
-        gfg: "",
-        hackerrank: "",
+        github: { username: "" },
+        leetcode: { username: "" },
       },
     };
   });
@@ -27,12 +34,16 @@ export const UserProvider = ({ children }) => {
   }, [user]);
 
   const login = (data) => {
-    setUser({
-      name: data.name,
-      email: data.email,
-      password: data.password,
-      platform_data: data.platform_data || {},
-    });
+    setUser((prev) => ({
+      ...prev,
+      name: data.name || prev.name,
+      email: data.email || prev.email,
+      password: data.password || prev.password,
+      platform_data: {
+        ...prev.platform_data,
+        ...(data.platform_data || {}),
+      },
+    }));
   };
 
   const logout = () => {
@@ -40,7 +51,20 @@ export const UserProvider = ({ children }) => {
       name: "",
       email: "",
       password: "",
-      platform_data: {},
+      firstName: "",
+      lastName: "",
+      bio: "",
+      country: "",
+      techStack: "",
+      college: "",
+      degree: "",
+      branch: "",
+      graduationYear: "",
+      avatar: "",
+      platform_data: {
+        github: { username: "" },
+        leetcode: { username: "" },
+      },
     });
     localStorage.removeItem("kompile_user");
   };
