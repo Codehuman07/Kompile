@@ -1,7 +1,4 @@
-import linkedinLogo from "../assets/logos/linkedin-sign.png";
-import twitterLogo from "../assets/logos/twitter.png";
-import instagramLogo from "../assets/logos/instagram.png";
-
+// Assets from public directory
 function Footer() {
     return (
         <footer className="w-full bg-[#0b0b0f] text-gray-400 border-t border-gray-800">
@@ -16,13 +13,13 @@ function Footer() {
                 </div>
                 <div className="flex items-center gap-6 text-xl">
                     <a href="#" className="hover:border-white hover:bg-white/5 transition border border-gray-700 p-2 rounded-xl flex items-center justify-center">
-                        <img src={linkedinLogo} alt="LinkedIn" className="h-8 w-8 object-contain"/>
+                        <img src="/assets/logos/linkedin-sign.png" alt="LinkedIn" className="h-8 w-8 object-contain"/>
                     </a>
                     <a href="#" className="hover:border-white hover:bg-white/5 transition border border-gray-700 p-2 rounded-xl flex items-center justify-center">
-                        <img src={twitterLogo} alt="twitter" className="h-8 w-8 object-contain"/>
+                        <img src="/assets/logos/twitter.png" alt="twitter" className="h-8 w-8 object-contain"/>
                     </a>
                     <a href="#" className="hover:border-white hover:bg-white/5 transition border border-gray-700 p-2 rounded-xl flex items-center justify-center">
-                        <img src={instagramLogo} alt="instagram" className="h-8 w-8 object-contain"/>
+                        <img src="/assets/logos/instagram.png" alt="instagram" className="h-8 w-8 object-contain"/>
                     </a>
                 </div>
                 <p className="text-sm text-gray-500 text-center">

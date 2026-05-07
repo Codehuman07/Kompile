@@ -5,11 +5,7 @@ import DataInputCard from "./DataInputCard.jsx";
 import { UserContext } from "../context/UserContext.jsx";
 import { ArrowBigLeft, User, LayoutGrid } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import leetcodeLogo from "../assets/platformLogos/leetcode-logo.png";
-import gfgLogo from "../assets/platformLogos/GeeksForGeeks.png";
-import codeforcesLogo from "../assets/platformLogos/codeforces-logo.png";
-import hackerrankLogo from "../assets/platformLogos/hackerrank-logo.png";
-import githubLogo from "../assets/platformLogos/github-logo.png";
+// Logo imports are replaced with direct paths since assets are in public directory
 
 const getPlatformKey = (platformName) => {
   const map = {
@@ -29,13 +25,13 @@ function UserData() {
   const platforms = [
     {
       name: "LeetCode",
-      logo: leetcodeLogo,
+      logo: "/assets/platformLogos/leetcode-logo.png",
       link: "https://leetcode.com/u/",
       placeholder: "johndoe",
     },
     {
       name: "GeeksForGeeks",
-      logo: gfgLogo,
+      logo: "/assets/platformLogos/GeeksForGeeks.png",
       link: "https://www.geeksforgeeks.org/user/",
       placeholder: "johndoe",
     },
@@ -47,13 +43,13 @@ function UserData() {
     // },
     {
       name: "CodeForces",
-      logo: codeforcesLogo,
+      logo: "/assets/platformLogos/codeforces-logo.png",
       link: "https://codeforces.com/profile/",
       placeholder: "johndoe",
     },
     {
       name: "HackerRank",
-      logo: hackerrankLogo,
+      logo: "/assets/platformLogos/hackerrank-logo.png",
       link: "https://www.hackerrank.com/profile/",
       placeholder: "johndoe",
     },
@@ -65,7 +61,7 @@ function UserData() {
     // },
     {
       name: "GitHub",
-      logo: githubLogo,
+      logo: "/assets/platformLogos/github-logo.png",
       link: "https://github.com/",
       placeholder: "johndoe",
     },
