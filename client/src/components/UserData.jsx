@@ -5,12 +5,11 @@ import DataInputCard from "./DataInputCard.jsx";
 import { UserContext } from "../context/UserContext.jsx";
 import { ArrowBigLeft, User, LayoutGrid } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import BasicInfoForm from "./BasicInfoForm.jsx";
-import leetcodeLogo from "../../Assets/platformLogos/leetcode-logo.png";
-import gfgLogo from "../../Assets/platformLogos/GeeksForGeeks.png";
-import codeforcesLogo from "../../Assets/platformLogos/codeforces-logo.png";
-import hackerrankLogo from "../../Assets/platformLogos/hackerrank-logo.png";
-import githubLogo from "../../Assets/platformLogos/github-logo.png";
+import leetcodeLogo from "../assets/platformLogos/leetcode-logo.png";
+import gfgLogo from "../assets/platformLogos/GeeksForGeeks.png";
+import codeforcesLogo from "../assets/platformLogos/codeforces-logo.png";
+import hackerrankLogo from "../assets/platformLogos/hackerrank-logo.png";
+import githubLogo from "../assets/platformLogos/github-logo.png";
 
 const getPlatformKey = (platformName) => {
   const map = {

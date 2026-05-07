@@ -58,12 +58,12 @@ export default function LandingPage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(249,115,22,0.1)] bg-gray-900/50 backdrop-blur-sm">
                 <img
-                  src="../../../Assets/landingPage/Kompile (5) 1.png"
+                  src="/assets/landingPage/Kompile (5) 1.png"
                   alt="dashboard"
                   className="hidden md:block w-full max-w-[950px] opacity-95"
                 />
                 <img
-                  src="../../../Assets/landingPage/Kompile (5) 1.png"
+                  src="/assets/landingPage/Kompile (5) 1.png"
                   alt="dashboard-mobile"
                   className="block md:hidden w-full max-w-sm rounded-xl"
                 />
@@ -72,7 +72,7 @@ export default function LandingPage() {
               <div className="md:absolute md:-bottom-12 md:-right-12 flex justify-center mt-10 md:mt-0">
                 <div className="border-[6px] border-[#1a1a1a] rounded-[2.8rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-black ring-1 ring-white/10">
                   <img
-                    src="../../../Assets/landingPage/codolio card.png"
+                    src="/assets/landingPage/codolio card.png"
                     alt="mobile"
                     className="w-[210px] h-auto object-cover scale-105"
                   />
@@ -135,7 +135,7 @@ export default function LandingPage() {
 
           <div className="flex justify-center mb-24">
             <img
-              src="../../../Assets/landingPage/codolio-platforms.png"
+              src="/assets/landingPage/codolio-platforms.png"
               alt="platforms"
               className="w-full max-w-2xl drop-shadow-[0_0_30px_rgba(249,115,22,0.1)]"
             />
@@ -150,13 +150,13 @@ export default function LandingPage() {
               notes in one place for easy review and revision.
             </p>
 
-            <div className="flex flex-wrap md:flex-nowrap justify-center items-stretch gap-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
-              <div className="flex-1 flex flex-col items-center text-center px-4 py-2 group hover:bg-white/5 rounded-2xl transition-all duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-orange-500/50 transition-all shadow-xl">
+            <div className="flex flex-wrap justify-center md:justify-end gap-8">
+              <div className="text-center w-[180px]">
+                <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
-                    src="../../assets/landingpage/workspace-svgrepo-com.svg"
+                    src="/assets/landingPage/workspace-svgrepo-com.svg"
                     alt="icon"
-                    className="w-7 h-7 invert opacity-80 group-hover:opacity-100"
+                    className="w-6 h-6 invert"
                   />
                 </div>
                 <h4 className="text-white font-bold text-lg mb-2">
@@ -167,14 +167,12 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-white/10 to-transparent my-4"></div>
-
-              <div className="flex-1 flex flex-col items-center text-center px-4 py-2 group hover:bg-white/5 rounded-2xl transition-all duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-orange-500/50 transition-all shadow-xl">
+              <div className="text-center w-[180px]">
+                <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
-                    src="../../assets/landingpage/tracker.svg"
+                    src="/assets/landingPage/tracker.svg"
                     alt="icon"
-                    className="w-7 h-7 invert opacity-80 group-hover:opacity-100"
+                    className="w-6 h-6 invert"
                   />
                 </div>
                 <h4 className="text-white font-bold text-lg mb-2">
@@ -185,14 +183,12 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-white/10 to-transparent my-4"></div>
-
-              <div className="flex-1 flex flex-col items-center text-center px-4 py-2 group hover:bg-white/5 rounded-2xl transition-all duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-orange-500/50 transition-all shadow-xl">
+              <div className="text-center w-[180px]">
+                <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <img
-                    src="../../assets/landingpage/notes.svg"
+                    src="/assets/landingPage/notes.svg"
                     alt="icon"
-                    className="w-7 h-7 invert opacity-80 group-hover:opacity-100"
+                    className="w-6 h-6 invert"
                   />
                 </div>
                 <h4 className="text-white font-bold text-lg mb-2">
@@ -216,7 +212,7 @@ export default function LandingPage() {
 
           <div className="flex justify-center mb-20 px-6">
             <img
-              src="../../../Assets/landingPage/grid.png"
+              src="/assets/landingPage/grid.png"
               alt="workspace grid"
               className="w-full max-w-5xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] opacity-90 border border-white/5"
             />
@@ -239,7 +235,6 @@ export default function LandingPage() {
 
             {/* ── Portfolio Bento Grid ── */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-
               {/* ── Row 1 ── */}
               {/* Card: See cumulative questions solved — narrow */}
               <div className="md:col-span-4 bg-[#111] border border-white/8 rounded-3xl p-5 flex flex-col">
@@ -359,7 +354,6 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
