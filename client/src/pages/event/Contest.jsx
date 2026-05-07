@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Calendar from "../../components/Calendar";
 import ContestCard from "../../components/ContestCard";
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer";
 
 export default function Contest() {
   const [contests, setContests] = useState([]);
@@ -102,7 +102,6 @@ export default function Contest() {
 
         {/* layout */}
         <div className="flex w-full gap-6 items-stretch h-[calc(100vh-180px)] min-h-[600px]">
-          {/* Left Column: Contest Cards */}
           <div className="hidden lg:flex w-[320px] xl:w-[400px] bg-[#141414] border border-[#2e2e2e] rounded-xl flex-shrink-0 flex-col overflow-hidden h-full">
             <div className="p-5 border-b border-[#2e2e2e] flex-shrink-0">
               <h2 className="text-xl font-bold text-[#e0e0e0]">
@@ -142,7 +141,6 @@ export default function Contest() {
             </div>
           </div>
 
-          {/* calendar container */}
           <div className="flex-1 relative h-full">
             {loading ? (
               <div className="flex justify-center items-center h-full bg-[#141414] border border-[#2e2e2e] rounded-xl">
