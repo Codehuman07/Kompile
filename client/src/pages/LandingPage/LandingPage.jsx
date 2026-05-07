@@ -141,68 +141,76 @@ export default function LandingPage() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
-                Simplify Your Preparation
-              </h3>
-              <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                Say goodbye to last-minute stress. Track all your questions and
-                notes in one place for easy review and revision.
-              </p>
-              <a href="#" className="text-blue-500 hover:underline font-bold">
-                Try Question Tracker →
-              </a>
-            </div>
+          <div className="text-center max-w-5xl mx-auto mb-24">
+            <h3 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
+              Simplify Your <span className="text-orange-500">Preparation</span>
+            </h3>
+            <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto">
+              Say goodbye to last-minute stress. Track all your questions and
+              notes in one place for easy review and revision.
+            </p>
 
-            <div className="flex flex-wrap justify-center md:justify-end gap-8">
-              <div className="text-center w-[180px]">
-                <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
+            <div className="flex flex-wrap md:flex-nowrap justify-center items-stretch gap-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
+              <div className="flex-1 flex flex-col items-center text-center px-4 py-2 group hover:bg-white/5 rounded-2xl transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-orange-500/50 transition-all shadow-xl">
                   <img
                     src="../../assets/landingpage/workspace-svgrepo-com.svg"
                     alt="icon"
-                    className="w-6 h-6 invert"
+                    className="w-7 h-7 invert opacity-80 group-hover:opacity-100"
                   />
                 </div>
-                <h4 className="text-white font-bold text-sm mb-1">
+                <h4 className="text-white font-bold text-lg mb-2">
                   My Workspace
                 </h4>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-400 text-sm leading-snug">
                   Tag & filter questions for easy organization
                 </p>
               </div>
 
-              <div className="text-center w-[180px]">
-                <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-white/10 to-transparent my-4"></div>
+
+              <div className="flex-1 flex flex-col items-center text-center px-4 py-2 group hover:bg-white/5 rounded-2xl transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-orange-500/50 transition-all shadow-xl">
                   <img
                     src="../../assets/landingpage/tracker.svg"
                     alt="icon"
-                    className="w-6 h-6 invert"
+                    className="w-7 h-7 invert opacity-80 group-hover:opacity-100"
                   />
                 </div>
-                <h4 className="text-white font-bold text-sm mb-1">
+                <h4 className="text-white font-bold text-lg mb-2">
                   Sheet Tracker
                 </h4>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-400 text-sm leading-snug">
                   Track all coding sheets in one place
                 </p>
               </div>
 
-              <div className="text-center w-[180px]">
-                <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
+              <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-white/10 to-transparent my-4"></div>
+
+              <div className="flex-1 flex flex-col items-center text-center px-4 py-2 group hover:bg-white/5 rounded-2xl transition-all duration-300">
+                <div className="w-14 h-14 bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-orange-500/50 transition-all shadow-xl">
                   <img
                     src="../../assets/landingpage/notes.svg"
                     alt="icon"
-                    className="w-6 h-6 invert"
+                    className="w-7 h-7 invert opacity-80 group-hover:opacity-100"
                   />
                 </div>
-                <h4 className="text-white font-bold text-sm mb-1">
+                <h4 className="text-white font-bold text-lg mb-2">
                   Enhanced Notes
                 </h4>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-400 text-sm leading-snug">
                   Add detailed notes to questions easily
                 </p>
               </div>
+            </div>
+
+            <div className="mt-12">
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-400 font-bold text-lg transition-colors"
+              >
+                Try Question Tracker <span>→</span>
+              </a>
             </div>
           </div>
 
