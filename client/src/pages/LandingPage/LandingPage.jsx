@@ -243,7 +243,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex-1 flex items-center justify-center min-h-[160px]">
                   <img
-                    src="../../../Assets/landingPage/feature.png"
+                    src="/assets/landingPage/feature.png"
                     alt="cumulative questions"
                     className="h-[160px] w-auto object-contain"
                   />
@@ -259,7 +259,7 @@ export default function LandingPage() {
                   {/* Active Days stat card */}
                   <div className="flex-none flex items-center justify-center h-[160px]">
                     <img
-                      src="../../../Assets/landingPage/feature1 (2).png"
+                      src="/assets/landingPage/feature1 (2).png"
                       alt="active days"
                       className="h-[160px] w-auto object-contain"
                     />
@@ -267,7 +267,7 @@ export default function LandingPage() {
                   {/* Heatmap — fills rest */}
                   <div className="flex-1 h-[160px] flex items-center justify-center rounded-2xl overflow-hidden bg-white/[0.03] border border-white/5 p-3">
                     <img
-                      src="../../../Assets/landingPage/heatmap.png"
+                      src="/assets/landingPage/heatmap.png"
                       alt="heatmap"
                       className="w-full h-full object-contain"
                     />
@@ -283,7 +283,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex-1 flex items-center justify-center min-h-[320px]">
                   <img
-                    src="../../../Assets/landingPage/feature1.png"
+                    src="/assets/landingPage/feature1.png"
                     alt="dsa analysis"
                     className="w-full h-[320px] object-contain"
                   />
@@ -297,7 +297,7 @@ export default function LandingPage() {
                 </p>
                 <div className="flex-1 flex items-center justify-center min-h-[320px]">
                   <img
-                    src="../../../Assets/landingPage/feature1 (1).png"
+                    src="/assets/landingPage/feature1 (1).png"
                     alt="classification"
                     className="w-full h-[320px] object-contain"
                   />
@@ -314,7 +314,7 @@ export default function LandingPage() {
                   {/* Contest count */}
                   <div className="flex items-center justify-center h-[120px]">
                     <img
-                      src="../../../Assets/landingPage/feature1 (4).png"
+                      src="/assets/landingPage/feature1 (4).png"
                       alt="contest stats"
                       className="h-full w-auto object-contain"
                     />
@@ -322,7 +322,7 @@ export default function LandingPage() {
                   {/* Rating graph */}
                   <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
                     <img
-                      src="../../../Assets/landingPage/Contest Graph.png"
+                      src="/assets/landingPage/Contest Graph.png"
                       alt="contest graph"
                       className="w-full h-[190px] object-contain"
                     />
@@ -339,7 +339,7 @@ export default function LandingPage() {
                   {/* Awards badges */}
                   <div className="flex items-center justify-center h-[120px] rounded-2xl bg-white/[0.03] border border-white/5 p-3">
                     <img
-                      src="../../../Assets/landingPage/feature1 (5).png"
+                      src="/assets/landingPage/feature1 (5).png"
                       alt="awards"
                       className="h-full w-auto object-contain"
                     />
@@ -347,7 +347,7 @@ export default function LandingPage() {
                   {/* Contest ranking */}
                   <div className="flex-1 flex items-center justify-center rounded-2xl bg-white/[0.03] border border-white/5 p-3 min-h-[190px]">
                     <img
-                      src="../../../Assets/landingPage/feature1 (6).png"
+                      src="/assets/landingPage/feature1 (6).png"
                       alt="rankings"
                       className="w-full h-[190px] object-contain"
                     />
@@ -374,7 +374,7 @@ export default function LandingPage() {
 
             <div className="flex justify-center">
               <img
-                src="../../../Assets/landingPage/feature1 (7).png"
+                src="/assets/landingPage/feature1 (7).png"
                 alt="github-stats-hub"
                 className="w-full max-w-5xl max-h-[400px] rounded-2xl object-contain"
               />
@@ -402,7 +402,7 @@ export default function LandingPage() {
                 {/* Soft ambient glow behind the image */}
                 <div className="absolute -inset-6 bg-orange-500/10 blur-3xl rounded-full" />
                 <img
-                  src="../../assets/landingpage/visibility.png"
+                  src="/assets/landingPage/visibility.png"
                   alt="calendar"
                   className="relative w-full max-w-[540px] h-auto rounded-2xl drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]"
                 />
