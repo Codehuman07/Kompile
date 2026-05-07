@@ -38,12 +38,12 @@ export default function LandingPage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(249,115,22,0.1)] bg-gray-900/50 backdrop-blur-sm">
                 <img
-                  src="../../../Assets/landingPage/Kompile (5) 1.png"
+                  src="/assets/landingPage/Kompile (5) 1.png"
                   alt="dashboard"
                   className="hidden md:block w-full max-w-[950px] opacity-95"
                 />
                 <img
-                  src="../../../Assets/landingPage/Kompile (5) 1.png"
+                  src="/assets/landingPage/Kompile (5) 1.png"
                   alt="dashboard-mobile"
                   className="block md:hidden w-full max-w-sm rounded-xl"
                 />
@@ -52,7 +52,7 @@ export default function LandingPage() {
               <div className="md:absolute md:-bottom-12 md:-right-12 flex justify-center mt-10 md:mt-0">
                 <div className="border-[6px] border-[#1a1a1a] rounded-[2.8rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-black ring-1 ring-white/10">
                   <img
-                    src="../../../Assets/landingPage/codolio card.png"
+                    src="/assets/landingPage/codolio card.png"
                     alt="mobile"
                     className="w-[210px] h-auto object-cover scale-105"
                   />
@@ -103,7 +103,7 @@ export default function LandingPage() {
 
           <div className="flex justify-center mb-24">
             <img
-              src="../../../Assets/landingPage/codolio-platforms.png"
+              src="/assets/landingPage/codolio-platforms.png"
               alt="platforms"
               className="w-full max-w-2xl drop-shadow-[0_0_30px_rgba(249,115,22,0.1)]"
             />
@@ -124,7 +124,7 @@ export default function LandingPage() {
             <div className="flex flex-wrap justify-center md:justify-end gap-8">
               <div className="text-center w-[180px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <img src="../../assets/landingpage/workspace-svgrepo-com.svg" alt="icon" className="w-6 h-6 invert" />
+                  <img src="/assets/landingPage/workspace-svgrepo-com.svg" alt="icon" className="w-6 h-6 invert" />
                 </div>
                 <h4 className="text-white font-bold text-sm mb-1">My Workspace</h4>
                 <p className="text-gray-400 text-xs">Tag & filter questions for easy organization</p>
@@ -132,7 +132,7 @@ export default function LandingPage() {
 
               <div className="text-center w-[180px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <img src="../../assets/landingpage/tracker.svg" alt="icon" className="w-6 h-6 invert" />
+                  <img src="/assets/landingPage/tracker.svg" alt="icon" className="w-6 h-6 invert" />
                 </div>
                 <h4 className="text-white font-bold text-sm mb-1">Sheet Tracker</h4>
                 <p className="text-gray-400 text-xs">Track all coding sheets in one place</p>
@@ -140,7 +140,7 @@ export default function LandingPage() {
 
               <div className="text-center w-[180px]">
                 <div className="w-12 h-12 bg-gray-900 border border-gray-700 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <img src="../../assets/landingpage/notes.svg" alt="icon" className="w-6 h-6 invert" />
+                  <img src="/assets/landingPage/notes.svg" alt="icon" className="w-6 h-6 invert" />
                 </div>
                 <h4 className="text-white font-bold text-sm mb-1">Enhanced Notes</h4>
                 <p className="text-gray-400 text-xs">Add detailed notes to questions easily</p>
@@ -150,7 +150,7 @@ export default function LandingPage() {
 
           <div className="flex justify-center mb-20">
             <img
-              src="../../../Assets/landingPage/grid.png"
+              src="/assets/landingPage/grid.png"
               alt="workspace grid"
               className="w-full rounded-xl shadow-2xl opacity-90"
             />
@@ -171,41 +171,41 @@ export default function LandingPage() {
 
               <div className="md:col-span-3 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">See cumulative questions solved</p>
-                <img src="../../../Assets/landingPage/feature1 (6).png" alt="stats" className="w-full" />
+                <img src="/assets/landingPage/feature1 (6).png" alt="stats" className="w-full" />
               </div>
 
               <div className="md:col-span-3 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">Total Active Days</p>
-                <img src="../../../Assets/landingPage/feature1 (5).png" alt="active days" className="w-full" />
+                <img src="/assets/landingPage/feature1 (5).png" alt="active days" className="w-full" />
               </div>
 
               <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">Track your streak,across multiple platforms</p>
-                <img src="../../../Assets/landingPage/feature1 (4).png" alt="heatmap" className="w-full" />
+                <img src="/assets/landingPage/feature1 (4).png" alt="heatmap" className="w-full" />
               </div>
 
 
               <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">Identify your strengths and areas of improvement</p>
-                <img src="../../../Assets/landingPage/feature1 (1).png" alt="dsa analysis" className="w-full" />
+                <img src="/assets/landingPage/feature1 (1).png" alt="dsa analysis" className="w-full" />
               </div>
 
               <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">Get classification of Problems solved</p>
-                <img src="../../../Assets/landingPage/feature1.png" alt="classification" className="w-full" />
+                <img src="/assets/landingPage/feature1.png" alt="classification" className="w-full" />
               </div>
 
 
               <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">Monitor your ratings in contests over time</p>
-                <img src="../../../Assets/landingPage/Contest Graph.png" alt="contest graph" className="w-full" />
+                <img src="/assets/landingPage/Contest Graph.png" alt="contest graph" className="w-full" />
               </div>
 
               <div className="md:col-span-6 bg-[#0d0d0d] border border-gray-800 rounded-2xl p-6">
                 <p className="text-gray-400 text-sm font-medium mb-4">Showcase your Achievements</p>
                 <div className="flex flex-col gap-4">
-                  <img src="../../../Assets/landingPage/feature1 (7).png" alt="awards" className="w-full" />
-                  <img src="../../../Assets/landingPage/feature1 (8).png" alt="rankings" className="w-full" />
+                  <img src="/assets/landingPage/feature1 (7).png" alt="awards" className="w-full" />
+                  <img src="/assets/landingPage/feature1 (8).png" alt="rankings" className="w-full" />
                 </div>
               </div>
             </div>
@@ -223,11 +223,11 @@ export default function LandingPage() {
             </div>
 
             <div className="bg-[#0d0d0d] border border-gray-800 rounded-3xl p-4 mb-8">
-              <img src="../../../Assets/landingPage/feature1 (7).png" alt="github-stats-hub" className="w-full rounded-2xl" />
+              <img src="/assets/landingPage/feature1 (7).png" alt="github-stats-hub" className="w-full rounded-2xl" />
             </div>
 
             <div className="bg-[#0d0d0d] border border-gray-800 rounded-3xl p-4">
-              <img src="../../../Assets/landingPage/feature1 (8).png" alt="projects-showcase" className="w-full rounded-2xl" />
+              <img src="/assets/landingPage/feature1 (8).png" alt="projects-showcase" className="w-full rounded-2xl" />
             </div>
           </div>
         </section>
@@ -245,7 +245,7 @@ export default function LandingPage() {
             <div className="md:w-1/2">
               <div className="p-2 bg-gray-900/40 border border-gray-800 rounded-[2rem] shadow-2xl">
                 <img 
-                  src="../../assets/landingpage/visibility.png" 
+                  src="/assets/landingPage/visibility.png" 
                   alt="calendar" 
                   className="w-full h-auto rounded-[1.5rem]" 
                 />

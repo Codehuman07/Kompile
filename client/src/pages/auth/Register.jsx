@@ -325,7 +325,7 @@ function Register() {
             />
 
             <img
-              src="/Assets/logos/hi_logo.png"
+              src="/assets/logos/hi_logo.png"
               alt="Kompile mascot"
               className="w-52 h-auto relative z-10 mb-5"
             />

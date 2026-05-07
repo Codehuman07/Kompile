@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import DataInputCard from "./DataInputCard.jsx";
 import { ArrowBigLeft } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import leetcodeLogo from "../../Assets/platformLogos/leetcode-logo.png";
-import gfgLogo from "../../Assets/platformLogos/GeeksForGeeks.png";
-import codeforcesLogo from "../../Assets/platformLogos/codeforces-logo.png";
-import hackerrankLogo from "../../Assets/platformLogos/hackerrank-logo.png";
-import githubLogo from "../../Assets/platformLogos/github-logo.png";
+import leetcodeLogo from "../assets/platformLogos/leetcode-logo.png";
+import gfgLogo from "../assets/platformLogos/GeeksForGeeks.png";
+import codeforcesLogo from "../assets/platformLogos/codeforces-logo.png";
+import hackerrankLogo from "../assets/platformLogos/hackerrank-logo.png";
+import githubLogo from "../assets/platformLogos/github-logo.png";
 
 function UserData() {
   const [PlatformUserName, setPlatformUserName] = useState({

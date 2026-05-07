@@ -33,7 +33,7 @@ function Login() {
           {/* Logo + Brand */}
           <div className="flex flex-col items-center gap-3 mb-2">
             <img
-              src="/Assets/logos/hi_logo.png"
+              src="/assets/logos/hi_logo.png"
               alt="Kompile logo"
               className="h-16 w-auto"
             />
