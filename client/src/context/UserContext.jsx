@@ -1,20 +1,30 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-    platform_data: {
-      github: "",
-      leetcode: "",
-      codeforces: "",
-      gfg: "",
-      hackerrank: "",
-    },
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem("kompile_user");
+    if (savedUser) {
+      return JSON.parse(savedUser);
+    }
+    return {
+      name: "",
+      email: "",
+      password: "",
+      platform_data: {
+        github: "",
+        leetcode: "",
+        codeforces: "",
+        gfg: "",
+        hackerrank: "",
+      },
+    };
   });
+
+  useEffect(() => {
+    localStorage.setItem("kompile_user", JSON.stringify(user));
+  }, [user]);
 
   const login = (data) => {
     setUser({
@@ -32,6 +42,14 @@ export const UserProvider = ({ children }) => {
       password: "",
       platform_data: {},
     });
+    localStorage.removeItem("kompile_user");
+  };
+
+  const updateBasicInfo = (info) => {
+    setUser((prev) => ({
+      ...prev,
+      ...info,
+    }));
   };
 
   return (
@@ -41,6 +59,7 @@ export const UserProvider = ({ children }) => {
         setUser,
         login,
         logout,
+        updateBasicInfo,
       }}
     >
       {children}

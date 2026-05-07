@@ -89,6 +89,12 @@ function UserData() {
       `[UserContext] ${platform.name} username saved:`,
       savedUsername,
     );
+    alert(`${platform.name} username saved successfully!`);
+  };
+
+  const handleGlobalSave = () => {
+    console.log("[UserContext] All platforms saved:", user.platform_data);
+    alert("All platform details saved successfully!");
   };
 
   const devPlatforms = platforms.filter((p) => p.name === "GitHub");
@@ -184,6 +190,15 @@ function UserData() {
                       ))}
                     </div>
                   </section>
+
+                  <div className="flex justify-end mt-10">
+                    <button
+                      onClick={handleGlobalSave}
+                      className="px-6 py-2.5 bg-[#f89f1b] hover:bg-[#e08e10] text-black font-semibold rounded-lg transition-colors"
+                    >
+                      Save Changes
+                    </button>
+                  </div>
                 </div>
               </div>
             )}

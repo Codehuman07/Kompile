@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Calendar from "../../components/Calendar";
 import ContestCard from "../../components/ContestCard";
-import Footer from "../../components/Footer";
+import { Footer } from "../../components/CompanyWiseKit/Footer";
 
 export default function Contest() {
   const [contests, setContests] = useState([]);

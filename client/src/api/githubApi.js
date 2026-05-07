@@ -1,13 +1,48 @@
-// const GITHUB_TOKEN =
+const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
-// let username = "sarthak-gupta229";
-async function getGithubStats() {
+export default async function getGithubStats(username) {
   const query = `
     query($login: String!) {
       user(login: $login) {
+
+        login
+        name
+        bio
+        avatarUrl
+        company
+        location
+        websiteUrl
+        twitterUsername
+
+        followers {
+          totalCount
+        }
+
+        following {
+          totalCount
+        }
+
+        repositories(first: 100, ownerAffiliations: OWNER) {
+          totalCount
+          nodes {
+            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              edges {
+                size
+                node {
+                  name
+                  color
+                }
+              }
+            }
+            stargazerCount
+          }
+        }
+
         contributionsCollection {
+          totalCommitContributions
           contributionCalendar {
             totalContributions
+
             weeks {
               contributionDays {
                 contributionCount
@@ -15,21 +50,6 @@ async function getGithubStats() {
                 color
               }
             }
-          }
-        }
-
-        repositories(first: 100, ownerAffiliations: OWNER) {
-          nodes {
-            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
-              edges {
-                size
-                node {
-                  name
-                }
-              }
-            }
-
-            stargazerCount
           }
         }
 
@@ -63,7 +83,8 @@ async function getGithubStats() {
   });
 
   const data = await response.json();
-  return data;
+
+  return data?.data?.user;
 }
 
-getGithubStats("octocat").then(console.log);
+getGithubStats("sarthakgupta1309").then(console.log);

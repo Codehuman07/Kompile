@@ -41,8 +41,8 @@ function LeetcodeData() {
   return (
     <>
       <div className="w-full min-h-screen px-4 md:px-8 max-w-300 mx-auto">
-        <div className="flex gap-5 justify-between w-full ">
-          <div className="w-1/4 bg-black rounded-xl h-full border border-[#2e2e2e] p-5 text-white flex flex-col items-center justify-center mb-5">
+        <div className="flex gap-5 justify-between w-full items-stretch mb-5">
+          <div className="w-1/4 bg-black rounded-xl border border-[#2e2e2e] p-5 text-white flex flex-col items-center justify-center">
             <h1 className="text-xl font-semibold text-zinc-400">
               Total Questions
             </h1>
@@ -50,7 +50,7 @@ function LeetcodeData() {
               {data?.submitStats?.acSubmissionNum?.[0]?.count ?? "—"}
             </h1>
           </div>
-          <div className="w-1/4 bg-black rounded-xl h-full border border-[#2e2e2e] p-5 text-white flex flex-col items-center justify-center">
+          <div className="w-1/4 bg-black rounded-xl border border-[#2e2e2e] p-5 text-white flex flex-col items-center justify-center">
             <h1 className="text-xl font-semibold text-zinc-400">
               Total Active Days
             </h1>
@@ -59,7 +59,7 @@ function LeetcodeData() {
             </h1>
           </div>
 
-          <div className="w-1/2 bg-black rounded-xl h-full border border-[#2e2e2e] p-5 flex flex-col justify-center text-zinc-600 text-sm">
+          <div className="w-1/2 bg-black rounded-xl border border-[#2e2e2e] p-5 flex flex-col justify-center text-zinc-600 text-sm">
             <h2 className="text-sm font-semibold text-zinc-400 uppercase tracking-wide mb-4">
               Submission Heatmap
             </h2>
