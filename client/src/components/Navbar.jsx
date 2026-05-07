@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/face-removebg-preview 1.png";
 
 const navLinkCls = ({ isActive }) =>
   isActive
@@ -11,7 +10,7 @@ function Navbar() {
     <nav className="fixed top-0 left-0 w-full bg-[#0f0f0f] border-b border-gray-800 px-6 py-3 flex items-center justify-between h-18 z-50">
       <Link to="/" className="flex items-center gap-2 box-border">
         <img
-          src={logo}
+          src="/assets/face-removebg-preview 1.png"
           alt="logo image"
           className="w-auto h-15"
         />
