@@ -30,7 +30,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 export function AnalyticsSection({ data = [], companyName = "Company" }) {
-  // Calculate Difficulty Distribution
+  
   const difficultyData = useMemo(() => {
     if (!data.length) return [];
     
@@ -49,9 +49,9 @@ export function AnalyticsSection({ data = [], companyName = "Company" }) {
     ].filter(d => d.value > 0);
   }, [data]);
 
-  // Generate deterministic Pattern Distribution (since tags aren't in JSON)
+  
   const patternData = useMemo(() => {
-    // We'll use a few different "seeds" based on company name to make it look distinct
+    
     const seed = companyName.length;
     const patterns = [
       { name: 'Arrays & Strings', base: 40 },
@@ -70,7 +70,7 @@ export function AnalyticsSection({ data = [], companyName = "Company" }) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* Pattern Distribution */}
+      
       <div className="bg-[#0f0f0f] border border-gray-800 rounded-3xl p-8 hover:border-gray-700 transition-all duration-300 group">
         <div className="mb-6">
           <h3 className="text-xl font-bold text-white">Interview Pattern Distribution</h3>
@@ -107,7 +107,7 @@ export function AnalyticsSection({ data = [], companyName = "Company" }) {
         </div>
       </div>
 
-      {/* Difficulty Distribution */}
+      
       <div className="bg-[#0f0f0f] border border-gray-800 rounded-3xl p-8 hover:border-gray-700 transition-all duration-300 group">
         <div className="mb-6">
           <h3 className="text-xl font-bold text-white">Difficulty Wise Distribution</h3>
