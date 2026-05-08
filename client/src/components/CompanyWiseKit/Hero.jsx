@@ -48,7 +48,7 @@ export function Hero() {
               </h3>
               <p className="text-gray-400 text-base leading-relaxed">
                 Our team constantly aggregates and verifies questions from
-                trusted platforms and Codolio user suggestions.
+                trusted platforms and Kompile user suggestions.
               </p>
             </div>
             <div className="border-l-4 border-gray-700 pl-6 py-1 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
