@@ -4,7 +4,7 @@ import { Lock, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 export function PremiumLocked({ companyName = "Company" }) {
   return (
     <div className="relative mt-12 rounded-3xl overflow-hidden border border-orange-500/30 bg-[#0f0f0f]">
-      {/* Background Gradient & Pattern */}
+     
       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-50"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.05)_0%,transparent_100%)]"></div>
       
@@ -46,7 +46,7 @@ export function PremiumLocked({ companyName = "Company" }) {
           </div>
         </div>
 
-        {/* Locked Illustration Area */}
+   
         <div className="w-full max-w-[350px] relative group">
           <div className="absolute inset-0 bg-orange-500/20 blur-[80px] rounded-full group-hover:bg-orange-500/30 transition-all duration-500"></div>
           <div className="relative bg-[#1a1a1a] border border-gray-800 rounded-3xl p-10 flex flex-col items-center justify-center gap-6 shadow-2xl overflow-hidden">
@@ -58,7 +58,7 @@ export function PremiumLocked({ companyName = "Company" }) {
               <p className="text-sm text-gray-500">Locked behind premium</p>
             </div>
             
-            {/* Mock Locked Rows */}
+      
             <div className="w-full space-y-3 opacity-20 pointer-events-none grayscale">
               <div className="h-4 bg-gray-800 rounded-full w-full"></div>
               <div className="h-4 bg-gray-800 rounded-full w-3/4"></div>

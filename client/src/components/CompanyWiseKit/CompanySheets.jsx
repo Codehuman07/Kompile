@@ -13,7 +13,7 @@ export function CompanySheets() {
       </h2>
 
       <div className="relative max-w-6xl mx-auto px-4">
-        {/* Navigation buttons */}
+     
         <button className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 z-10 p-3 bg-[#1f1f1f] border border-gray-700 rounded-full shadow-lg text-gray-400 hover:text-white hover:scale-110 transition-all">
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -22,7 +22,7 @@ export function CompanySheets() {
           <ChevronRight className="w-5 h-5" />
         </button>
 
-        {/* Cards container */}
+      
         <div className="flex gap-6 overflow-x-auto pb-8 snap-x hide-scrollbar" style={{ scrollbarWidth: 'none' }}>
           {companies.map((company, idx) => (
             <div 

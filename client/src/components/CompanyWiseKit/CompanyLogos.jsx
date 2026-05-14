@@ -29,7 +29,7 @@ function CompanyItem({ company }) {
 }
 
 export function CompanyLogos() {
-  // Duplicate for seamless infinite loop
+  
   const doubled = [...companies, ...companies];
 
   return (
@@ -38,9 +38,9 @@ export function CompanyLogos() {
         Interview Success Stories From
       </h3>
 
-      {/* Marquee track */}
+     
       <div className="relative">
-        {/* Fade edges */}
+  
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
@@ -56,7 +56,7 @@ export function CompanyLogos() {
         </div>
       </div>
 
-      {/* Keyframe definition */}
+  
       <style>{`
         @keyframes marquee {
           0%   { transform: translateX(0); }

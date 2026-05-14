@@ -5,7 +5,7 @@ import { cn } from '../../lib/utils';
 export function DashboardNavbar() {
   return (
     <div className="fixed top-18 left-0 right-0 h-16 bg-[#0f0f0f]/80 backdrop-blur-md border-b border-gray-800 z-30 flex items-center justify-between px-6 transition-all duration-300">
-      {/* Search Area */}
+
       <div className="flex items-center gap-4 flex-1 max-w-xl">
         <div className="relative w-full group">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 group-focus-within:text-orange-500 transition-colors" />
@@ -17,7 +17,7 @@ export function DashboardNavbar() {
         </div>
       </div>
 
-      {/* Right Actions */}
+  
       <div className="flex items-center gap-4">
         <button className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold transition-all duration-200 shadow-lg shadow-orange-500/20">
           <Sparkles className="w-3.5 h-3.5" />
