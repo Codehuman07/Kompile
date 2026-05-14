@@ -35,11 +35,11 @@ function Navbar() {
         <NavLink to="/" end className={navLinkCls}>
           Home
         </NavLink>
-        <NavLink to="/company" className={navLinkCls}>
-          Company Wise Kit
-        </NavLink>
         <NavLink to="/events" className={navLinkCls}>
           Event Tracker
+        </NavLink>
+        <NavLink to="/company" className={navLinkCls}>
+          Company Wise Kit
         </NavLink>
         <NavLink to="/profile" className={navLinkCls}>
           Profile Tracker
