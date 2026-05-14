@@ -26,17 +26,17 @@ export function DashboardNavbar() {
         
         <div className="h-8 w-[1px] bg-gray-800 mx-2 hidden sm:block"></div>
         
-        <button className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors relative">
+        {/* <button className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors relative">
           <Bell className="w-5 h-5" />
           <span className="absolute top-2 right-2 w-2 h-2 bg-orange-500 rounded-full border-2 border-[#0f0f0f]"></span>
-        </button>
+        </button> */}
 
-        <button className="flex items-center gap-2 p-1 pr-3 rounded-full bg-white/5 hover:bg-white/10 border border-gray-800 transition-all duration-200 group">
+        {/* <button className="flex items-center gap-2 p-1 pr-3 rounded-full bg-white/5 hover:bg-white/10 border border-gray-800 transition-all duration-200 group">
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-xs shadow-inner">
             JD
           </div>
           <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">John Doe</span>
-        </button>
+        </button> */}
       </div>
     </div>
   );

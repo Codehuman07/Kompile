@@ -30,7 +30,11 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 export function AnalyticsSection({ data = [], companyName = "Company" }) {
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 2cba75a645973649706b42d54993b1b4cb2dd1c2
   const difficultyData = useMemo(() => {
     if (!data.length) return [];
     
@@ -49,9 +53,15 @@ export function AnalyticsSection({ data = [], companyName = "Company" }) {
     ].filter(d => d.value > 0);
   }, [data]);
 
+<<<<<<< HEAD
  
   const patternData = useMemo(() => {
    
+=======
+  
+  const patternData = useMemo(() => {
+    
+>>>>>>> 2cba75a645973649706b42d54993b1b4cb2dd1c2
     const seed = companyName.length;
     const patterns = [
       { name: 'Arrays & Strings', base: 40 },
@@ -70,7 +80,11 @@ export function AnalyticsSection({ data = [], companyName = "Company" }) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 2cba75a645973649706b42d54993b1b4cb2dd1c2
       <div className="bg-[#0f0f0f] border border-gray-800 rounded-3xl p-8 hover:border-gray-700 transition-all duration-300 group">
         <div className="mb-6">
           <h3 className="text-xl font-bold text-white">Interview Pattern Distribution</h3>
@@ -107,7 +121,11 @@ export function AnalyticsSection({ data = [], companyName = "Company" }) {
         </div>
       </div>
 
+<<<<<<< HEAD
      
+=======
+      
+>>>>>>> 2cba75a645973649706b42d54993b1b4cb2dd1c2
       <div className="bg-[#0f0f0f] border border-gray-800 rounded-3xl p-8 hover:border-gray-700 transition-all duration-300 group">
         <div className="mb-6">
           <h3 className="text-xl font-bold text-white">Difficulty Wise Distribution</h3>
