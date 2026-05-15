@@ -11,6 +11,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/leetcode/, ""),
         secure: true,
+        cookieDomainRewrite: { "leetcode.com": "localhost" },
       },
     },
   },

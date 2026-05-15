@@ -15,6 +15,7 @@ import {
 
 function LeetcodeData() {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
   const [heatMap, setHeatMap] = useState({});
 
@@ -27,6 +28,7 @@ function LeetcodeData() {
         setLoading(false);
         return;
       }
+      setLoading(true);
       const result = await fetchUserTopicStats(username);
       console.log(result);
       setData(result);
@@ -42,9 +44,26 @@ function LeetcodeData() {
         });
         setHeatMap(formattedHeatMap);
       }
+      setLoading(false);
     };
     loadData();
-  }, []);
+  }, [username]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center w-full h-48 bg-[#151515] rounded-xl border border-[#2e2e2e] mb-5">
+        <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-zinc-300"></div>
+      </div>
+    );
+  }
+
+  if (!username) {
+    return (
+      <div className="flex justify-center items-center w-full h-48 bg-[#151515] rounded-xl border border-[#2e2e2e] mb-5 text-zinc-400">
+        No LeetCode username set. Please add your LeetCode username in Settings.
+      </div>
+    );
+  }
 
   return (
     <>
@@ -114,9 +133,9 @@ function LeetcodeData() {
             </h2>
             <div className="flex items-center gap-6 flex-1">
               <DonutChart
-                easy={data?.submitStats?.acSubmissionNum[1]?.count ?? 0}
-                medium={data?.submitStats?.acSubmissionNum[2]?.count ?? 0}
-                hard={data?.submitStats?.acSubmissionNum[3]?.count ?? 0}
+                easy={data?.submitStats?.acSubmissionNum?.[1]?.count ?? 0}
+                medium={data?.submitStats?.acSubmissionNum?.[2]?.count ?? 0}
+                hard={data?.submitStats?.acSubmissionNum?.[3]?.count ?? 0}
               />
 
               <div className="flex flex-col gap-3 flex-1">

@@ -13,9 +13,14 @@ function GithubData() {
   const { user } = useContext(UserContext);
   const username = user?.platform_data?.github?.username;
   useEffect(() => {
+    if (!username) {
+      setLoading(false);
+      return;
+    }
     const fetchGithubStats = async () => {
       try {
         setLoading(true);
+        setError(null);
         const data = await getGithubStats(username);
         console.log(data);
         setGithubData(data);
@@ -26,12 +31,20 @@ function GithubData() {
       }
     };
     fetchGithubStats();
-  }, []);
+  }, [username]);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center w-full h-48 bg-[#151515] rounded-xl border border-[#2e2e2e] mb-5">
         <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-zinc-300"></div>
+      </div>
+    );
+  }
+
+  if (!username) {
+    return (
+      <div className="flex justify-center items-center w-full h-48 bg-[#151515] rounded-xl border border-[#2e2e2e] mb-5 text-zinc-400">
+        No GitHub username set. Please add your GitHub username in Settings.
       </div>
     );
   }
